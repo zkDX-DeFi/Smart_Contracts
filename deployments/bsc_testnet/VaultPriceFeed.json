@@ -1,0 +1,310 @@
+{
+  "address": "0x010D868FBcb0d3dDcABDb55c3Cd77788443b4212",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_pyth",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "feedIds",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "_maximise",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "_fresh",
+          "type": "bool"
+        }
+      ],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes[]",
+          "name": "_updateData",
+          "type": "bytes[]"
+        }
+      ],
+      "name": "getUpdateFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "gov",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_token",
+          "type": "address"
+        }
+      ],
+      "name": "latestTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "_diff",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pyth",
+      "outputs": [
+        {
+          "internalType": "contract IPyth",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_tokens",
+          "type": "address[]"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "_feedIds",
+          "type": "bytes32[]"
+        }
+      ],
+      "name": "setFeedIds",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_gov",
+          "type": "address"
+        }
+      ],
+      "name": "setGov",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_pyth",
+          "type": "address"
+        }
+      ],
+      "name": "setPyth",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_validTime",
+          "type": "uint256"
+        }
+      ],
+      "name": "setValidTime",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes[]",
+          "name": "_priceData",
+          "type": "bytes[]"
+        }
+      ],
+      "name": "updatePriceFeeds",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "validTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x39885b71a5dc5a4dc2e29d349f6ef5c41b192a863f1d91f27ba08bdb1913a633",
+  "receipt": {
+    "to": null,
+    "from": "0x4e8730f175811C3079C411309DB823E62a4f9598",
+    "contractAddress": "0x010D868FBcb0d3dDcABDb55c3Cd77788443b4212",
+    "transactionIndex": 0,
+    "gasUsed": "821386",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x0f6e06ed42003ee094c8fcb548fa48e25c91359bee0d025109abfe97ac6c25e6",
+    "transactionHash": "0x39885b71a5dc5a4dc2e29d349f6ef5c41b192a863f1d91f27ba08bdb1913a633",
+    "logs": [],
+    "blockNumber": 32541579,
+    "cumulativeGasUsed": "821386",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xd7308b14BF4008e7C7196eC35610B1427C5702EA"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "136f62b55852fe19f5c64d50e5c6241e",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_pyth\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"feedIds\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_maximise\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"_fresh\",\"type\":\"bool\"}],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes[]\",\"name\":\"_updateData\",\"type\":\"bytes[]\"}],\"name\":\"getUpdateFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gov\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_token\",\"type\":\"address\"}],\"name\":\"latestTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"_diff\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pyth\",\"outputs\":[{\"internalType\":\"contract IPyth\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_tokens\",\"type\":\"address[]\"},{\"internalType\":\"bytes32[]\",\"name\":\"_feedIds\",\"type\":\"bytes32[]\"}],\"name\":\"setFeedIds\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_gov\",\"type\":\"address\"}],\"name\":\"setGov\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_pyth\",\"type\":\"address\"}],\"name\":\"setPyth\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_validTime\",\"type\":\"uint256\"}],\"name\":\"setValidTime\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes[]\",\"name\":\"_priceData\",\"type\":\"bytes[]\"}],\"name\":\"updatePriceFeeds\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"validTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/core/VaultPriceFeed.sol\":\"VaultPriceFeed\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":100},\"remappings\":[]},\"sources\":{\"@pythnetwork/pyth-sdk-solidity/IPyth.sol\":{\"content\":\"// SPDX-License-Identifier: Apache-2.0\\npragma solidity ^0.8.0;\\n\\nimport \\\"./PythStructs.sol\\\";\\nimport \\\"./IPythEvents.sol\\\";\\n\\n/// @title Consume prices from the Pyth Network (https://pyth.network/).\\n/// @dev Please refer to the guidance at https://docs.pyth.network/consumers/best-practices for how to consume prices safely.\\n/// @author Pyth Data Association\\ninterface IPyth is IPythEvents {\\n    /// @notice Returns the period (in seconds) that a price feed is considered valid since its publish time\\n    function getValidTimePeriod() external view returns (uint validTimePeriod);\\n\\n    /// @notice Returns the price and confidence interval.\\n    /// @dev Reverts if the price has not been updated within the last `getValidTimePeriod()` seconds.\\n    /// @param id The Pyth Price Feed ID of which to fetch the price and confidence interval.\\n    /// @return price - please read the documentation of PythStructs.Price to understand how to use this safely.\\n    function getPrice(\\n        bytes32 id\\n    ) external view returns (PythStructs.Price memory price);\\n\\n    /// @notice Returns the exponentially-weighted moving average price and confidence interval.\\n    /// @dev Reverts if the EMA price is not available.\\n    /// @param id The Pyth Price Feed ID of which to fetch the EMA price and confidence interval.\\n    /// @return price - please read the documentation of PythStructs.Price to understand how to use this safely.\\n    function getEmaPrice(\\n        bytes32 id\\n    ) external view returns (PythStructs.Price memory price);\\n\\n    /// @notice Returns the price of a price feed without any sanity checks.\\n    /// @dev This function returns the most recent price update in this contract without any recency checks.\\n    /// This function is unsafe as the returned price update may be arbitrarily far in the past.\\n    ///\\n    /// Users of this function should check the `publishTime` in the price to ensure that the returned price is\\n    /// sufficiently recent for their application. If you are considering using this function, it may be\\n    /// safer / easier to use either `getPrice` or `getPriceNoOlderThan`.\\n    /// @return price - please read the documentation of PythStructs.Price to understand how to use this safely.\\n    function getPriceUnsafe(\\n        bytes32 id\\n    ) external view returns (PythStructs.Price memory price);\\n\\n    /// @notice Returns the price that is no older than `age` seconds of the current time.\\n    /// @dev This function is a sanity-checked version of `getPriceUnsafe` which is useful in\\n    /// applications that require a sufficiently-recent price. Reverts if the price wasn't updated sufficiently\\n    /// recently.\\n    /// @return price - please read the documentation of PythStructs.Price to understand how to use this safely.\\n    function getPriceNoOlderThan(\\n        bytes32 id,\\n        uint age\\n    ) external view returns (PythStructs.Price memory price);\\n\\n    /// @notice Returns the exponentially-weighted moving average price of a price feed without any sanity checks.\\n    /// @dev This function returns the same price as `getEmaPrice` in the case where the price is available.\\n    /// However, if the price is not recent this function returns the latest available price.\\n    ///\\n    /// The returned price can be from arbitrarily far in the past; this function makes no guarantees that\\n    /// the returned price is recent or useful for any particular application.\\n    ///\\n    /// Users of this function should check the `publishTime` in the price to ensure that the returned price is\\n    /// sufficiently recent for their application. If you are considering using this function, it may be\\n    /// safer / easier to use either `getEmaPrice` or `getEmaPriceNoOlderThan`.\\n    /// @return price - please read the documentation of PythStructs.Price to understand how to use this safely.\\n    function getEmaPriceUnsafe(\\n        bytes32 id\\n    ) external view returns (PythStructs.Price memory price);\\n\\n    /// @notice Returns the exponentially-weighted moving average price that is no older than `age` seconds\\n    /// of the current time.\\n    /// @dev This function is a sanity-checked version of `getEmaPriceUnsafe` which is useful in\\n    /// applications that require a sufficiently-recent price. Reverts if the price wasn't updated sufficiently\\n    /// recently.\\n    /// @return price - please read the documentation of PythStructs.Price to understand how to use this safely.\\n    function getEmaPriceNoOlderThan(\\n        bytes32 id,\\n        uint age\\n    ) external view returns (PythStructs.Price memory price);\\n\\n    /// @notice Update price feeds with given update messages.\\n    /// This method requires the caller to pay a fee in wei; the required fee can be computed by calling\\n    /// `getUpdateFee` with the length of the `updateData` array.\\n    /// Prices will be updated if they are more recent than the current stored prices.\\n    /// The call will succeed even if the update is not the most recent.\\n    /// @dev Reverts if the transferred fee is not sufficient or the updateData is invalid.\\n    /// @param updateData Array of price update data.\\n    function updatePriceFeeds(bytes[] calldata updateData) external payable;\\n\\n    /// @notice Wrapper around updatePriceFeeds that rejects fast if a price update is not necessary. A price update is\\n    /// necessary if the current on-chain publishTime is older than the given publishTime. It relies solely on the\\n    /// given `publishTimes` for the price feeds and does not read the actual price update publish time within `updateData`.\\n    ///\\n    /// This method requires the caller to pay a fee in wei; the required fee can be computed by calling\\n    /// `getUpdateFee` with the length of the `updateData` array.\\n    ///\\n    /// `priceIds` and `publishTimes` are two arrays with the same size that correspond to senders known publishTime\\n    /// of each priceId when calling this method. If all of price feeds within `priceIds` have updated and have\\n    /// a newer or equal publish time than the given publish time, it will reject the transaction to save gas.\\n    /// Otherwise, it calls updatePriceFeeds method to update the prices.\\n    ///\\n    /// @dev Reverts if update is not needed or the transferred fee is not sufficient or the updateData is invalid.\\n    /// @param updateData Array of price update data.\\n    /// @param priceIds Array of price ids.\\n    /// @param publishTimes Array of publishTimes. `publishTimes[i]` corresponds to known `publishTime` of `priceIds[i]`\\n    function updatePriceFeedsIfNecessary(\\n        bytes[] calldata updateData,\\n        bytes32[] calldata priceIds,\\n        uint64[] calldata publishTimes\\n    ) external payable;\\n\\n    /// @notice Returns the required fee to update an array of price updates.\\n    /// @param updateData Array of price update data.\\n    /// @return feeAmount The required fee in Wei.\\n    function getUpdateFee(\\n        bytes[] calldata updateData\\n    ) external view returns (uint feeAmount);\\n\\n    /// @notice Parse `updateData` and return price feeds of the given `priceIds` if they are all published\\n    /// within `minPublishTime` and `maxPublishTime`.\\n    ///\\n    /// You can use this method if you want to use a Pyth price at a fixed time and not the most recent price;\\n    /// otherwise, please consider using `updatePriceFeeds`. This method does not store the price updates on-chain.\\n    ///\\n    /// This method requires the caller to pay a fee in wei; the required fee can be computed by calling\\n    /// `getUpdateFee` with the length of the `updateData` array.\\n    ///\\n    ///\\n    /// @dev Reverts if the transferred fee is not sufficient or the updateData is invalid or there is\\n    /// no update for any of the given `priceIds` within the given time range.\\n    /// @param updateData Array of price update data.\\n    /// @param priceIds Array of price ids.\\n    /// @param minPublishTime minimum acceptable publishTime for the given `priceIds`.\\n    /// @param maxPublishTime maximum acceptable publishTime for the given `priceIds`.\\n    /// @return priceFeeds Array of the price feeds corresponding to the given `priceIds` (with the same order).\\n    function parsePriceFeedUpdates(\\n        bytes[] calldata updateData,\\n        bytes32[] calldata priceIds,\\n        uint64 minPublishTime,\\n        uint64 maxPublishTime\\n    ) external payable returns (PythStructs.PriceFeed[] memory priceFeeds);\\n}\\n\",\"keccak256\":\"0x949c65c65fea0578c09a6fc068e09ed1165adede2c835984cefcb25d76de1de2\",\"license\":\"Apache-2.0\"},\"@pythnetwork/pyth-sdk-solidity/IPythEvents.sol\":{\"content\":\"// SPDX-License-Identifier: Apache-2.0\\npragma solidity ^0.8.0;\\n\\n/// @title IPythEvents contains the events that Pyth contract emits.\\n/// @dev This interface can be used for listening to the updates for off-chain and testing purposes.\\ninterface IPythEvents {\\n    /// @dev Emitted when the price feed with `id` has received a fresh update.\\n    /// @param id The Pyth Price Feed ID.\\n    /// @param publishTime Publish time of the given price update.\\n    /// @param price Price of the given price update.\\n    /// @param conf Confidence interval of the given price update.\\n    event PriceFeedUpdate(\\n        bytes32 indexed id,\\n        uint64 publishTime,\\n        int64 price,\\n        uint64 conf\\n    );\\n\\n    /// @dev Emitted when a batch price update is processed successfully.\\n    /// @param chainId ID of the source chain that the batch price update comes from.\\n    /// @param sequenceNumber Sequence number of the batch price update.\\n    event BatchPriceFeedUpdate(uint16 chainId, uint64 sequenceNumber);\\n}\\n\",\"keccak256\":\"0x048a35526c2e77d107d43ba336f1dcf31f64cef25ba429ae1f7a0fbc11c23320\",\"license\":\"Apache-2.0\"},\"@pythnetwork/pyth-sdk-solidity/PythStructs.sol\":{\"content\":\"// SPDX-License-Identifier: Apache-2.0\\npragma solidity ^0.8.0;\\n\\ncontract PythStructs {\\n    // A price with a degree of uncertainty, represented as a price +- a confidence interval.\\n    //\\n    // The confidence interval roughly corresponds to the standard error of a normal distribution.\\n    // Both the price and confidence are stored in a fixed-point numeric representation,\\n    // `x * (10^expo)`, where `expo` is the exponent.\\n    //\\n    // Please refer to the documentation at https://docs.pyth.network/consumers/best-practices for how\\n    // to how this price safely.\\n    struct Price {\\n        // Price\\n        int64 price;\\n        // Confidence interval around the price\\n        uint64 conf;\\n        // Price exponent\\n        int32 expo;\\n        // Unix timestamp describing when the price was published\\n        uint publishTime;\\n    }\\n\\n    // PriceFeed represents a current aggregate price from pyth publisher feeds.\\n    struct PriceFeed {\\n        // The price ID.\\n        bytes32 id;\\n        // Latest available price\\n        Price price;\\n        // Latest available exponentially-weighted moving average price\\n        Price emaPrice;\\n    }\\n}\\n\",\"keccak256\":\"0x95ff0a6d64517348ef604b8bcf246b561a9445d7e607b8f48491c617cfda9b65\",\"license\":\"Apache-2.0\"},\"contracts/core/VaultPriceFeed.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\nimport \\\"@pythnetwork/pyth-sdk-solidity/IPyth.sol\\\";\\nimport \\\"@pythnetwork/pyth-sdk-solidity/PythStructs.sol\\\";\\n\\ncontract VaultPriceFeed {\\n\\n    IPyth public pyth;\\n    uint256 public validTime;\\n    mapping(address => bytes32) public feedIds;\\n    address public gov;\\n\\n    modifier onlyGov() {\\n        require(msg.sender == gov, \\\"VaultPriceFeed: forbidden\\\");\\n        _;\\n    }\\n\\n    constructor(address _pyth) {\\n        pyth = IPyth(_pyth);\\n        validTime = 3 seconds;\\n        gov = msg.sender;\\n    }\\n\\n    function getPrice(address _token, bool _maximise, bool _fresh) external view returns (uint256) {\\n        PythStructs.Price memory _feed = pyth.getPriceUnsafe(feedIds[_token]);\\n        require(_feed.price > 0, \\\"VaultPriceFeed: price not available\\\");\\n        if (_fresh && block.timestamp > _feed.publishTime)\\n            require(block.timestamp - _feed.publishTime <= validTime, \\\"VaultPriceFeed: price too old\\\");\\n\\n        uint256 _price = abs(_feed.price);\\n        uint256 _confidence = uint256(_feed.conf);\\n        uint256 _exponent = 30 - abs(_feed.expo);\\n\\n        _price = _maximise ? _price + _confidence : _price - _confidence;\\n        return _price * 10 ** _exponent;\\n    }\\n\\n    function latestTime(address _token) external view returns (uint256 _diff) {\\n        PythStructs.Price memory _feed = pyth.getPriceUnsafe(feedIds[_token]);\\n        _diff = block.timestamp - _feed.publishTime;\\n    }\\n\\n    function getUpdateFee(bytes[] calldata _updateData) external view returns (uint256){\\n        return pyth.getUpdateFee(_updateData);\\n    }\\n\\n    function updatePriceFeeds(bytes[] calldata _priceData) external payable {\\n        pyth.updatePriceFeeds{value : msg.value}(_priceData);\\n    }\\n\\n    function setPyth(address _pyth) external onlyGov {\\n        pyth = IPyth(_pyth);\\n    }\\n\\n    function setValidTime(uint256 _validTime) external onlyGov {\\n        validTime = _validTime;\\n    }\\n\\n    function setFeedIds(address[] calldata _tokens, bytes32[] calldata _feedIds) external onlyGov {\\n        require(_tokens.length == _feedIds.length, \\\"VaultPriceFeed: invalid feedIds\\\");\\n        for (uint256 i = 0; i < _tokens.length; i++)\\n            feedIds[_tokens[i]] = _feedIds[i];\\n    }\\n\\n    function setGov(address _gov) external onlyGov {\\n        gov = _gov;\\n    }\\n\\n    function abs(int256 n) internal pure returns (uint256) {\\n        unchecked {\\n            return uint256(n >= 0 ? n : - n);\\n        }\\n    }\\n\\n}\\n\",\"keccak256\":\"0x8918601311257e709f4d4dabcf3ccf231423d9ad7543a1675c23789e917c851b\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50604051610d48380380610d4883398101604081905261002f91610062565b600080546001600160a01b039092166001600160a01b031992831617905560036001819055805490911633179055610092565b60006020828403121561007457600080fd5b81516001600160a01b038116811461008b57600080fd5b9392505050565b610ca7806100a16000396000f3fe6080604052600436106100a75760003560e01c8063bbe4491711610064578063bbe44917146101a6578063cfad57a2146101bc578063d47eed45146101dc578063ee22fd6f146101fc578063ef9e5e281461021c578063f98d06f01461022f57600080fd5b806312d43a51146100ac5780634c93c1e2146100e95780634fd666061461010b5780635ae69163146101395780635de379321461015957806386dcbc1a14610186575b600080fd5b3480156100b857600080fd5b506003546100cc906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b3480156100f557600080fd5b5061010961010436600461079d565b61024f565b005b34801561011757600080fd5b5061012b6101263660046107d2565b610287565b6040519081526020016100e0565b34801561014557600080fd5b5061012b6101543660046107fd565b610326565b34801561016557600080fd5b5061012b6101743660046107d2565b60026020526000908152604090205481565b34801561019257600080fd5b506101096101a136600461088b565b61050c565b3480156101b257600080fd5b5061012b60015481565b3480156101c857600080fd5b506101096101d73660046107d2565b610607565b3480156101e857600080fd5b5061012b6101f73660046108f6565b610653565b34801561020857600080fd5b506101096102173660046107d2565b6106d0565b61010961022a3660046108f6565b61071c565b34801561023b57600080fd5b506000546100cc906001600160a01b031681565b6003546001600160a01b031633146102825760405162461bcd60e51b815260040161027990610937565b60405180910390fd5b600155565b600080546001600160a01b038381168352600260205260408084205490516396834ad360e01b8152849392909216916396834ad3916102cc9160040190815260200190565b608060405180830381865afa1580156102e9573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061030d9190610993565b905080606001514261031f9190610a38565b9392505050565b600080546001600160a01b038581168352600260205260408084205490516396834ad360e01b8152849392909216916396834ad39161036b9160040190815260200190565b608060405180830381865afa158015610388573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103ac9190610993565b90506000816000015160070b136104115760405162461bcd60e51b815260206004820152602360248201527f5661756c745072696365466565643a207072696365206e6f7420617661696c61604482015262626c6560e81b6064820152608401610279565b8280156104215750806060015142115b156104865760015460608201516104389042610a38565b11156104865760405162461bcd60e51b815260206004820152601d60248201527f5661756c745072696365466565643a20707269636520746f6f206f6c640000006044820152606401610279565b6000610498826000015160070b610786565b9050600082602001516001600160401b0316905060006104be846040015160030b610786565b6104c990601e610a38565b9050866104df576104da8284610a38565b6104e9565b6104e98284610a4b565b92506104f681600a610b42565b6105009084610b4e565b98975050505050505050565b6003546001600160a01b031633146105365760405162461bcd60e51b815260040161027990610937565b8281146105855760405162461bcd60e51b815260206004820152601f60248201527f5661756c745072696365466565643a20696e76616c69642066656564496473006044820152606401610279565b60005b83811015610600578282828181106105a2576105a2610b65565b90506020020135600260008787858181106105bf576105bf610b65565b90506020020160208101906105d491906107d2565b6001600160a01b03168152602081019190915260400160002055806105f881610b7b565b915050610588565b5050505050565b6003546001600160a01b031633146106315760405162461bcd60e51b815260040161027990610937565b600380546001600160a01b0319166001600160a01b0392909216919091179055565b6000805460405163d47eed4560e01b81526001600160a01b039091169063d47eed45906106869086908690600401610bbd565b602060405180830381865afa1580156106a3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106c79190610c58565b90505b92915050565b6003546001600160a01b031633146106fa5760405162461bcd60e51b815260040161027990610937565b600080546001600160a01b0319166001600160a01b0392909216919091179055565b600054604051631df3cbc560e31b81526001600160a01b039091169063ef9e5e289034906107509086908690600401610bbd565b6000604051808303818588803b15801561076957600080fd5b505af115801561077d573d6000803e3d6000fd5b50505050505050565b60008082121561079957816000036106ca565b5090565b6000602082840312156107af57600080fd5b5035919050565b80356001600160a01b03811681146107cd57600080fd5b919050565b6000602082840312156107e457600080fd5b6106c7826107b6565b803580151581146107cd57600080fd5b60008060006060848603121561081257600080fd5b61081b846107b6565b9250610829602085016107ed565b9150610837604085016107ed565b90509250925092565b60008083601f84011261085257600080fd5b5081356001600160401b0381111561086957600080fd5b6020830191508360208260051b850101111561088457600080fd5b9250929050565b600080600080604085870312156108a157600080fd5b84356001600160401b03808211156108b857600080fd5b6108c488838901610840565b909650945060208701359150808211156108dd57600080fd5b506108ea87828801610840565b95989497509550505050565b6000806020838503121561090957600080fd5b82356001600160401b0381111561091f57600080fd5b61092b85828601610840565b90969095509350505050565b6020808252601990820152782b30bab63a283934b1b2a332b2b21d103337b93134b23232b760391b604082015260600190565b80516001600160401b03811681146107cd57600080fd5b8051600381900b81146107cd57600080fd5b6000608082840312156109a557600080fd5b604051608081018181106001600160401b03821117156109d557634e487b7160e01b600052604160045260246000fd5b6040528251600781900b81146109ea57600080fd5b81526109f86020840161096a565b6020820152610a0960408401610981565b6040820152606083015160608201528091505092915050565b634e487b7160e01b600052601160045260246000fd5b818103818111156106ca576106ca610a22565b808201808211156106ca576106ca610a22565b600181815b80851115610a99578160001904821115610a7f57610a7f610a22565b80851615610a8c57918102915b93841c9390800290610a63565b509250929050565b600082610ab0575060016106ca565b81610abd575060006106ca565b8160018114610ad35760028114610add57610af9565b60019150506106ca565b60ff841115610aee57610aee610a22565b50506001821b6106ca565b5060208310610133831016604e8410600b8410161715610b1c575081810a6106ca565b610b268383610a5e565b8060001904821115610b3a57610b3a610a22565b029392505050565b60006106c78383610aa1565b80820281158282048414176106ca576106ca610a22565b634e487b7160e01b600052603260045260246000fd5b600060018201610b8d57610b8d610a22565b5060010190565b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b60208082528181018390526000906040600585901b8401810190840186845b87811015610c4b57868403603f190183528135368a9003601e19018112610c0257600080fd5b890185810190356001600160401b03811115610c1d57600080fd5b803603821315610c2c57600080fd5b610c37868284610b94565b955050509184019190840190600101610bdc565b5091979650505050505050565b600060208284031215610c6a57600080fd5b505191905056fea26469706673582212203eba0f1f66042babdf56005af1899a804754ae793240bf7b17af60d76729f22e64736f6c63430008110033",
+  "deployedBytecode": "0x6080604052600436106100a75760003560e01c8063bbe4491711610064578063bbe44917146101a6578063cfad57a2146101bc578063d47eed45146101dc578063ee22fd6f146101fc578063ef9e5e281461021c578063f98d06f01461022f57600080fd5b806312d43a51146100ac5780634c93c1e2146100e95780634fd666061461010b5780635ae69163146101395780635de379321461015957806386dcbc1a14610186575b600080fd5b3480156100b857600080fd5b506003546100cc906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b3480156100f557600080fd5b5061010961010436600461079d565b61024f565b005b34801561011757600080fd5b5061012b6101263660046107d2565b610287565b6040519081526020016100e0565b34801561014557600080fd5b5061012b6101543660046107fd565b610326565b34801561016557600080fd5b5061012b6101743660046107d2565b60026020526000908152604090205481565b34801561019257600080fd5b506101096101a136600461088b565b61050c565b3480156101b257600080fd5b5061012b60015481565b3480156101c857600080fd5b506101096101d73660046107d2565b610607565b3480156101e857600080fd5b5061012b6101f73660046108f6565b610653565b34801561020857600080fd5b506101096102173660046107d2565b6106d0565b61010961022a3660046108f6565b61071c565b34801561023b57600080fd5b506000546100cc906001600160a01b031681565b6003546001600160a01b031633146102825760405162461bcd60e51b815260040161027990610937565b60405180910390fd5b600155565b600080546001600160a01b038381168352600260205260408084205490516396834ad360e01b8152849392909216916396834ad3916102cc9160040190815260200190565b608060405180830381865afa1580156102e9573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061030d9190610993565b905080606001514261031f9190610a38565b9392505050565b600080546001600160a01b038581168352600260205260408084205490516396834ad360e01b8152849392909216916396834ad39161036b9160040190815260200190565b608060405180830381865afa158015610388573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103ac9190610993565b90506000816000015160070b136104115760405162461bcd60e51b815260206004820152602360248201527f5661756c745072696365466565643a207072696365206e6f7420617661696c61604482015262626c6560e81b6064820152608401610279565b8280156104215750806060015142115b156104865760015460608201516104389042610a38565b11156104865760405162461bcd60e51b815260206004820152601d60248201527f5661756c745072696365466565643a20707269636520746f6f206f6c640000006044820152606401610279565b6000610498826000015160070b610786565b9050600082602001516001600160401b0316905060006104be846040015160030b610786565b6104c990601e610a38565b9050866104df576104da8284610a38565b6104e9565b6104e98284610a4b565b92506104f681600a610b42565b6105009084610b4e565b98975050505050505050565b6003546001600160a01b031633146105365760405162461bcd60e51b815260040161027990610937565b8281146105855760405162461bcd60e51b815260206004820152601f60248201527f5661756c745072696365466565643a20696e76616c69642066656564496473006044820152606401610279565b60005b83811015610600578282828181106105a2576105a2610b65565b90506020020135600260008787858181106105bf576105bf610b65565b90506020020160208101906105d491906107d2565b6001600160a01b03168152602081019190915260400160002055806105f881610b7b565b915050610588565b5050505050565b6003546001600160a01b031633146106315760405162461bcd60e51b815260040161027990610937565b600380546001600160a01b0319166001600160a01b0392909216919091179055565b6000805460405163d47eed4560e01b81526001600160a01b039091169063d47eed45906106869086908690600401610bbd565b602060405180830381865afa1580156106a3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106c79190610c58565b90505b92915050565b6003546001600160a01b031633146106fa5760405162461bcd60e51b815260040161027990610937565b600080546001600160a01b0319166001600160a01b0392909216919091179055565b600054604051631df3cbc560e31b81526001600160a01b039091169063ef9e5e289034906107509086908690600401610bbd565b6000604051808303818588803b15801561076957600080fd5b505af115801561077d573d6000803e3d6000fd5b50505050505050565b60008082121561079957816000036106ca565b5090565b6000602082840312156107af57600080fd5b5035919050565b80356001600160a01b03811681146107cd57600080fd5b919050565b6000602082840312156107e457600080fd5b6106c7826107b6565b803580151581146107cd57600080fd5b60008060006060848603121561081257600080fd5b61081b846107b6565b9250610829602085016107ed565b9150610837604085016107ed565b90509250925092565b60008083601f84011261085257600080fd5b5081356001600160401b0381111561086957600080fd5b6020830191508360208260051b850101111561088457600080fd5b9250929050565b600080600080604085870312156108a157600080fd5b84356001600160401b03808211156108b857600080fd5b6108c488838901610840565b909650945060208701359150808211156108dd57600080fd5b506108ea87828801610840565b95989497509550505050565b6000806020838503121561090957600080fd5b82356001600160401b0381111561091f57600080fd5b61092b85828601610840565b90969095509350505050565b6020808252601990820152782b30bab63a283934b1b2a332b2b21d103337b93134b23232b760391b604082015260600190565b80516001600160401b03811681146107cd57600080fd5b8051600381900b81146107cd57600080fd5b6000608082840312156109a557600080fd5b604051608081018181106001600160401b03821117156109d557634e487b7160e01b600052604160045260246000fd5b6040528251600781900b81146109ea57600080fd5b81526109f86020840161096a565b6020820152610a0960408401610981565b6040820152606083015160608201528091505092915050565b634e487b7160e01b600052601160045260246000fd5b818103818111156106ca576106ca610a22565b808201808211156106ca576106ca610a22565b600181815b80851115610a99578160001904821115610a7f57610a7f610a22565b80851615610a8c57918102915b93841c9390800290610a63565b509250929050565b600082610ab0575060016106ca565b81610abd575060006106ca565b8160018114610ad35760028114610add57610af9565b60019150506106ca565b60ff841115610aee57610aee610a22565b50506001821b6106ca565b5060208310610133831016604e8410600b8410161715610b1c575081810a6106ca565b610b268383610a5e565b8060001904821115610b3a57610b3a610a22565b029392505050565b60006106c78383610aa1565b80820281158282048414176106ca576106ca610a22565b634e487b7160e01b600052603260045260246000fd5b600060018201610b8d57610b8d610a22565b5060010190565b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b60208082528181018390526000906040600585901b8401810190840186845b87811015610c4b57868403603f190183528135368a9003601e19018112610c0257600080fd5b890185810190356001600160401b03811115610c1d57600080fd5b803603821315610c2c57600080fd5b610c37868284610b94565b955050509184019190840190600101610bdc565b5091979650505050505050565b600060208284031215610c6a57600080fd5b505191905056fea26469706673582212203eba0f1f66042babdf56005af1899a804754ae793240bf7b17af60d76729f22e64736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 10498,
+        "contract": "contracts/core/VaultPriceFeed.sol:VaultPriceFeed",
+        "label": "pyth",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_contract(IPyth)9976"
+      },
+      {
+        "astId": 10500,
+        "contract": "contracts/core/VaultPriceFeed.sol:VaultPriceFeed",
+        "label": "validTime",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 10504,
+        "contract": "contracts/core/VaultPriceFeed.sol:VaultPriceFeed",
+        "label": "feedIds",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_bytes32)"
+      },
+      {
+        "astId": 10506,
+        "contract": "contracts/core/VaultPriceFeed.sol:VaultPriceFeed",
+        "label": "gov",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(IPyth)9976": {
+        "encoding": "inplace",
+        "label": "contract IPyth",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_bytes32)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bytes32)",
+        "numberOfBytes": "32",
+        "value": "t_bytes32"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

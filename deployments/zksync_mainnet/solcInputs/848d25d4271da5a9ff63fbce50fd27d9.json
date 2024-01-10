@@ -1,0 +1,29 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/peripherals/MultiTransfer.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.13;\n\ninterface IERC20 {\n    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);\n}\n\ninterface IERC721 {\n    function transferFrom(address from, address to, uint256 tokenId) external;\n}\n\ncontract MultiTransfer {\n\n    function multiTransfer20(address tokenAddress, address[] memory recipients, uint256[] memory amounts) external {\n        require(recipients.length == amounts.length, \"params length mismatch\");\n        IERC20 token = IERC20(tokenAddress);\n        for (uint256 i = 0; i < recipients.length; i++)\n            token.transferFrom(msg.sender, recipients[i], amounts[i]);\n    }\n\n    function multiTransfer721(address tokenAddress, address[] memory recipients, uint256[] memory tokenIds) external {\n        require(recipients.length == tokenIds.length, \"params length mismatch\");\n        IERC721 token = IERC721(tokenAddress);\n        for (uint256 i = 0; i < recipients.length; i++)\n            token.transferFrom(msg.sender, recipients[i], tokenIds[i]);\n    }\n}\n\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "mode": "3"
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.methodIdentifiers",
+          "storageLayout"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

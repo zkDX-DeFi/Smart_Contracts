@@ -1,0 +1,12 @@
+{
+  "zksync_mainnet": {
+    "esZKDX": "0xE9d81b108cF6062607BCD888C745fb67e9d5eFcd",
+    "esZKDXOmni": "0x3b56FcAA31fAE78C5239292227ebef12cE76EEd0"
+  },
+  "linea_mainnet": {
+    "esZKDXOmni": "0x0449854533B847f4e8DD3b10E46CF37d698dAaa0"
+  },
+  "base_mainnet": {
+    "esZKDXOmni": "0x0449854533B847f4e8DD3b10E46CF37d698dAaa0"
+  }
+}

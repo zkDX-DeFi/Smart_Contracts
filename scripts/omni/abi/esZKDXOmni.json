@@ -1,0 +1,11 @@
+{
+  "zksync_testnet": {
+    "esZKDXOmni": "0x497d1E748EC3751a1b6910FE83a1DbdF3aBf43ef"
+  },
+  "linea_testnet": {
+    "esZKDXOmni": "0x1300f7Cd1d0B2339dc7E6dC9E6b02Ab4827aa168"
+  },
+  "base_testnet": {
+    "esZKDXOmni": "0x1300f7Cd1d0B2339dc7E6dC9E6b02Ab4827aa168"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "linea_mainnet": {
+    "OmniStakingETH": "0x1300f7Cd1d0B2339dc7E6dC9E6b02Ab4827aa168",
+    "esZKDXOmni": "0x0449854533B847f4e8DD3b10E46CF37d698dAaa0"
+  },
+  "base_mainnet": {
+    "OmniStakingETH": "0x1300f7Cd1d0B2339dc7E6dC9E6b02Ab4827aa168",
+    "esZKDXOmni": "0x0449854533B847f4e8DD3b10E46CF37d698dAaa0"
+  }
+}

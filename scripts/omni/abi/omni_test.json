@@ -1,0 +1,10 @@
+{
+  "optimism_goerli": {
+    "OmniStakingETH": "0x7EDf216489B994c5C907aCA2c758d03Be43B9b48",
+    "esZKDXOmni": "0x646184a56F74B52708f366d057a1e4B94CB220c8"
+  },
+  "goerli": {
+    "OmniStakingETH": "0x7EDf216489B994c5C907aCA2c758d03Be43B9b48",
+    "esZKDXOmni": "0x646184a56F74B52708f366d057a1e4B94CB220c8"
+  }
+}

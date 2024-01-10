@@ -1,0 +1,439 @@
+{
+  "address": "0xbb913871e8bb4273bC97Cb6Bd424672D0Dcc8628",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_vault",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "data",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_account",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_collateralToken",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_indexToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_nextPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_sizeDelta",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_isIncrease",
+          "type": "bool"
+        }
+      ],
+      "name": "getNextGlobalShortData",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_account",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_collateralToken",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_indexToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_sizeDelta",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_isIncrease",
+          "type": "bool"
+        }
+      ],
+      "name": "getRealisedPnl",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "globalShortAveragePrices",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "gov",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isGlobalShortDataReady",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "isHandler",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_gov",
+          "type": "address"
+        }
+      ],
+      "name": "setGov",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_handler",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "_isActive",
+          "type": "bool"
+        }
+      ],
+      "name": "setHandler",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "_tokens",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "_averagePrices",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "setInitData",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "value",
+          "type": "bool"
+        }
+      ],
+      "name": "setIsGlobalShortDataReady",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_account",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_collateralToken",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_indexToken",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "_isLong",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_sizeDelta",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_markPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_isIncrease",
+          "type": "bool"
+        }
+      ],
+      "name": "updateGlobalShortData",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "vault",
+      "outputs": [
+        {
+          "internalType": "contract IVault",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x59ea3a2841dfb040f7a0691b7ea727021e2d845508d205aee7e1b2cbcc19448e",
+  "receipt": {
+    "to": null,
+    "from": "0x4e8730f175811C3079C411309DB823E62a4f9598",
+    "contractAddress": "0xbb913871e8bb4273bC97Cb6Bd424672D0Dcc8628",
+    "transactionIndex": 0,
+    "gasUsed": "961603",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x96131eacf63834c1fbf235685fbcff6e21b11880b102d2277d7cc8e564bc6648",
+    "transactionHash": "0x59ea3a2841dfb040f7a0691b7ea727021e2d845508d205aee7e1b2cbcc19448e",
+    "logs": [],
+    "blockNumber": 25093295,
+    "cumulativeGasUsed": "961603",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x61dD442523d9fb1ed7de5f4a1188Ccd1F0A0bE58"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "45f986e69ef0b1c3adec9bb2994aea31",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_vault\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"data\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_collateralToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_indexToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_nextPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_sizeDelta\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"_isIncrease\",\"type\":\"bool\"}],\"name\":\"getNextGlobalShortData\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_collateralToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_indexToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_sizeDelta\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"_isIncrease\",\"type\":\"bool\"}],\"name\":\"getRealisedPnl\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"globalShortAveragePrices\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"gov\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isGlobalShortDataReady\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"isHandler\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_gov\",\"type\":\"address\"}],\"name\":\"setGov\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_handler\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_isActive\",\"type\":\"bool\"}],\"name\":\"setHandler\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"_tokens\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"_averagePrices\",\"type\":\"uint256[]\"}],\"name\":\"setInitData\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"value\",\"type\":\"bool\"}],\"name\":\"setIsGlobalShortDataReady\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_collateralToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_indexToken\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_isLong\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"_sizeDelta\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_markPrice\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"_isIncrease\",\"type\":\"bool\"}],\"name\":\"updateGlobalShortData\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"vault\",\"outputs\":[{\"internalType\":\"contract IVault\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/core/ShortsTracker.sol\":\"ShortsTracker\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":100},\"remappings\":[]},\"sources\":{\"contracts/access/Governable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\ncontract Governable {\\n    address public gov;\\n    constructor() public {\\n        gov = msg.sender;\\n    }\\n    modifier onlyGov() {\\n        require(msg.sender == gov, \\\"Governable: forbidden\\\");\\n        _;\\n    }\\n    function setGov(address _gov) external onlyGov {\\n        gov = _gov;\\n    }\\n}\",\"keccak256\":\"0xc16ebf2cd4d28502419d8631a3bf20c21e01e1ed67e4fa7712f58d03b728396f\",\"license\":\"MIT\"},\"contracts/core/ShortsTracker.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\n\\nimport \\\"./settings/ShortsTrackerSettings.sol\\\";\\n\\ncontract ShortsTracker is ShortsTrackerSettings {\\n    \\n    constructor(address _vault) public {\\n        vault = IVault(_vault);\\n    }\\n    function updateGlobalShortData(address _account, address _collateralToken, address _indexToken, bool _isLong, uint256 _sizeDelta, uint256 _markPrice, bool _isIncrease) override external onlyHandler {\\n        if (_isLong || _sizeDelta == 0) {\\n            return;\\n        }\\n        if (!isGlobalShortDataReady) {\\n            return;\\n        }\\n        (uint256 globalShortSize, uint256 globalShortAveragePrice) = getNextGlobalShortData(_account, _collateralToken, _indexToken, _markPrice, _sizeDelta, _isIncrease);\\n        _setGlobalShortAveragePrice(_indexToken, globalShortAveragePrice);\\n        emit Events.GlobalShortDataUpdated(_indexToken, globalShortSize, globalShortAveragePrice);\\n    }\\n\\n    function _setGlobalShortAveragePrice(address _token, uint256 _averagePrice) internal {\\n        globalShortAveragePrices[_token] = _averagePrice;\\n    }\\n    \\n    function getNextGlobalShortData(address _account, address _collateralToken, address _indexToken, uint256 _nextPrice, uint256 _sizeDelta, bool _isIncrease) override public view returns (uint256, uint256) {\\n        int256 realisedPnl = getRealisedPnl(_account, _collateralToken, _indexToken, _sizeDelta, _isIncrease);\\n        uint256 averagePrice = globalShortAveragePrices[_indexToken];\\n        uint256 priceDelta = averagePrice > _nextPrice ? averagePrice.sub(_nextPrice) : _nextPrice.sub(averagePrice);\\n        uint256 nextSize;\\n        uint256 delta;\\n        {\\n            uint256 size = vault.globalShortSizes(_indexToken);\\n            nextSize = _isIncrease ? size.add(_sizeDelta) : size.sub(_sizeDelta);\\n            if (nextSize == 0) {\\n                return (0, 0);\\n            }\\n            if (averagePrice == 0) {\\n                return (nextSize, _nextPrice);\\n            }\\n            delta = size.mul(priceDelta).div(averagePrice);\\n        }\\n        uint256 nextAveragePrice = _getNextGlobalAveragePrice(averagePrice, _nextPrice, nextSize, delta, realisedPnl);\\n        return (nextSize, nextAveragePrice);\\n    }\\n\\n    function getRealisedPnl(address _account, address _collateralToken, address _indexToken, uint256 _sizeDelta, bool _isIncrease) public view returns (int256) {\\n        if (_isIncrease) {\\n            return 0;\\n        }\\n        IVault _vault = vault;\\n        (uint256 size, , uint256 averagePrice, , , , , uint256 lastIncreasedTime) = _vault.getPosition(_account, _collateralToken, _indexToken, false);\\n        (bool hasProfit, uint256 delta) = _vault.getDelta(_indexToken, size, averagePrice, false, lastIncreasedTime);\\n        uint256 adjustedDelta = _sizeDelta.mul(delta).div(size);\\n        require(adjustedDelta < Constants.MAX_INT256, Errors.SHORTSTRACKER_OVERFLOW);\\n        return hasProfit ? int256(adjustedDelta) : - int256(adjustedDelta);\\n    }\\n\\n    function _getNextGlobalAveragePrice(uint256 _averagePrice, uint256 _nextPrice, uint256 _nextSize, uint256 _delta, int256 _realisedPnl) internal pure returns (uint256) {\\n        (bool hasProfit, uint256 nextDelta) = _getNextDelta(_delta, _averagePrice, _nextPrice, _realisedPnl);\\n        uint256 nextAveragePrice = _nextPrice\\n        .mul(_nextSize)\\n        .div(hasProfit ? _nextSize.sub(nextDelta) : _nextSize.add(nextDelta));\\n        return nextAveragePrice;\\n    }\\n\\n    function _getNextDelta(uint256 _delta, uint256 _averagePrice, uint256 _nextPrice, int256 _realisedPnl) internal pure returns (bool, uint256) {\\n        bool hasProfit = _averagePrice > _nextPrice;\\n        if (hasProfit) {\\n            if (_realisedPnl > 0) {\\n                if (uint256(_realisedPnl) > _delta) {\\n                    _delta = uint256(_realisedPnl).sub(_delta);\\n                    hasProfit = false;\\n                } else {\\n                    _delta = _delta.sub(uint256(_realisedPnl));\\n                }\\n            } else {\\n                _delta = _delta.add(uint256(- _realisedPnl));\\n            }\\n            return (hasProfit, _delta);\\n        }\\n        if (_realisedPnl > 0) {\\n            _delta = _delta.add(uint256(_realisedPnl));\\n        } else {\\n            if (uint256(- _realisedPnl) > _delta) {\\n                _delta = uint256(- _realisedPnl).sub(_delta);\\n                hasProfit = true;\\n            } else {\\n                _delta = _delta.sub(uint256(- _realisedPnl));\\n            }\\n        }\\n        return (hasProfit, _delta);\\n    }\\n}\\n\",\"keccak256\":\"0xa216f2163b2158a84a496505310af3074569bbd780b7a6b19424d8f1a840b3bf\",\"license\":\"MIT\"},\"contracts/core/interfaces/IShortsTracker.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\ninterface IShortsTracker {\\n    function isGlobalShortDataReady() external view returns (bool);\\n    function globalShortAveragePrices(address _token) external view returns (uint256);\\n    function getNextGlobalShortData(\\n        address _account, address _collateralToken,\\n        address _indexToken, uint256 _nextPrice,\\n        uint256 _sizeDelta, bool _isIncrease) external view returns (uint256, uint256);\\n    function updateGlobalShortData(\\n        address _account, address _collateralToken,\\n        address _indexToken, bool _isLong,\\n        uint256 _sizeDelta, uint256 _markPrice, bool _isIncrease) external;\\n}\",\"keccak256\":\"0x56b4525c777ea2ba6f0c381b3d9575c06983e9a9086bfb590934865ba366bb6b\",\"license\":\"MIT\"},\"contracts/core/interfaces/IVault.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\nimport \\\"./IVaultUtils.sol\\\";\\ninterface IVault {\\n    function withdrawFees(address _token, address _receiver) external returns (uint256);\\n    function directPoolDeposit(address _token) external;\\n    function buyZKUSD(address _token, address _receiver) external returns (uint256);\\n    function sellZKUSD(address _token, address _receiver) external returns (uint256);\\n    function swap(address _tokenIn, address _tokenOut, address _receiver) external returns (uint256);\\n    function increasePosition(\\n        address _account, address _collateralToken,\\n        address _indexToken, uint256 _sizeDelta, bool _isLong) external;\\n    function decreasePosition(\\n        address _account, address _collateralToken,\\n        address _indexToken, uint256 _collateralDelta,\\n        uint256 _sizeDelta, bool _isLong, address _receiver) external returns (uint256);\\n    function validateLiquidation(\\n        address _account, address _collateralToken,\\n        address _indexToken, bool _isLong, bool _raise) external view returns (uint256, uint256);\\n    function liquidatePosition(\\n        address _account, address _collateralToken,\\n        address _indexToken, bool _isLong, address _feeReceiver) external;\\n\\n    function tokenToUsdMin(address _token, uint256 _tokenAmount) external view returns (uint256);\\n    function priceFeed() external view returns (address);\\n    function fundingRateFactor() external view returns (uint256);\\n    function stableFundingRateFactor() external view returns (uint256);\\n    function cumulativeFundingRates(address _token) external view returns (uint256);\\n    function getNextFundingRate(address _token) external view returns (uint256);\\n    function getFeeBasisPoints(\\n        address _token, uint256 _zkusdDelta,\\n        uint256 _feeBasisPoints, uint256 _taxBasisPoints, bool _increment) external view returns (uint256);\\n    function liquidationFeeUsd() external view returns (uint256);\\n    function taxBasisPoints() external view returns (uint256);\\n    function stableTaxBasisPoints() external view returns (uint256);\\n    function mintBurnFeeBasisPoints() external view returns (uint256);\\n    function swapFeeBasisPoints() external view returns (uint256);\\n    function stableSwapFeeBasisPoints() external view returns (uint256);\\n    function marginFeeBasisPoints() external view returns (uint256);\\n    function allWhitelistedTokensLength() external view returns (uint256);\\n    function allWhitelistedTokens(uint256) external view returns (address);\\n    function whitelistedTokens(address _token) external view returns (bool);\\n    function stableTokens(address _token) external view returns (bool);\\n    function shortableTokens(address _token) external view returns (bool);\\n    function equityTokens(address _token) external view returns (bool);\\n    function feeReserves(address _token) external view returns (uint256);\\n    function globalShortSizes(address _token) external view returns (uint256);\\n    function globalShortAveragePrices(address _token) external view returns (uint256);\\n    function maxGlobalShortSizes(address _token) external view returns (uint256);\\n    function tokenDecimals(address _token) external view returns (uint256);\\n    function tokenWeights(address _token) external view returns (uint256);\\n    function guaranteedUsd(address _token) external view returns (uint256);\\n    function poolAmounts(address _token) external view returns (uint256);\\n    function bufferAmounts(address _token) external view returns (uint256);\\n    function reservedAmounts(address _token) external view returns (uint256);\\n    function zkusdAmounts(address _token) external view returns (uint256);\\n    function maxZkusdAmounts(address _token) external view returns (uint256);\\n    function getRedemptionAmount(address _token, uint256 _zkusdAmount) external view returns (uint256);\\n    function getMaxPrice(address _token) external view returns (uint256);\\n    function getMinPrice(address _token) external view returns (uint256);\\n    function getDelta(\\n        address _indexToken, uint256 _size,\\n        uint256 _averagePrice, bool _isLong, uint256 _lastIncreasedTime) external view returns (bool, uint256);\\n    function getPosition(\\n        address _account, address _collateralToken,\\n        address _indexToken, bool _isLong) external view returns (uint256, uint256, uint256, uint256, uint256, uint256, bool, uint256);\\n    function isPositionExist(address _account, address _collateralToken, address _indexToken, bool _isLong) external view returns (bool, bytes32);\\n    function isInitialized() external view returns (bool);\\n    function isSwapEnabled() external view returns (bool);\\n    function isLeverageEnabled() external view returns (bool);\\n    function router() external view returns (address);\\n    function zkusd() external view returns (address);\\n    function gov() external view returns (address);\\n    function whitelistedTokenCount() external view returns (uint256);\\n    function maxLeverage() external view returns (uint256);\\n    function minProfitTime() external view returns (uint256);\\n    function hasDynamicFees() external view returns (bool);\\n    function fundingInterval() external view returns (uint256);\\n    function totalTokenWeights() external view returns (uint256);\\n    function getTargetZkusdAmount(address _token) external view returns (uint256);\\n    function inManagerMode() external view returns (bool);\\n    function inPrivateLiquidationMode() external view returns (bool);\\n    function maxGasPrice() external view returns (uint256);\\n    function approvedRouters(address _account, address _router) external view returns (bool);\\n    function isLiquidator(address _account) external view returns (bool);\\n    function isManager(address _account) external view returns (bool);\\n    function minProfitBasisPoints(address _token) external view returns (uint256);\\n    function tokenBalances(address _token) external view returns (uint256);\\n    function lastFundingTimes(address _token) external view returns (uint256);\\n\\n    function setMaxLeverage(uint256 _maxLeverage) external;\\n    function setInManagerMode(bool _inManagerMode) external;\\n    function setManager(address _manager, bool _isManager) external;\\n    function setIsSwapEnabled(bool _isSwapEnabled) external;\\n    function setIsLeverageEnabled(bool _isLeverageEnabled) external;\\n    function setMaxGasPrice(uint256 _maxGasPrice) external;\\n    function setZkusdAmount(address _token, uint256 _amount) external;\\n    function setBufferAmount(address _token, uint256 _amount) external;\\n    function setMaxGlobalShortSize(address _token, uint256 _amount) external;\\n    function setInPrivateLiquidationMode(bool _inPrivateLiquidationMode) external;\\n    function setLiquidator(address _liquidator, bool _isActive) external;\\n    function setFundingRate(\\n        uint256 _fundingInterval, uint256 _fundingRateFactor,\\n        uint256 _stableFundingRateFactor) external;\\n    function setFees(\\n        uint256 _taxBasisPoints, uint256 _stableTaxBasisPoints,\\n        uint256 _mintBurnFeeBasisPoints, uint256 _swapFeeBasisPoints,\\n        uint256 _stableSwapFeeBasisPoints, uint256 _marginFeeBasisPoints,\\n        uint256 _liquidationFeeUsd, uint256 _minProfitTime, bool _hasDynamicFees) external;\\n\\n    function setTokenConfig(\\n        address _token, uint256 _tokenDecimals,\\n        uint256 _redemptionBps, uint256 _minProfitBps,\\n        uint256 _maxZkusdAmount, bool _isStable,\\n        bool _isShortable, bool _isEquity) external;\\n    function clearTokenConfig(address _token) external;\\n    function setMinProfitTime(uint256 _minProfitTime) external;\\n    function setPriceFeed(address _priceFeed) external;\\n    function setVaultUtils(IVaultUtils _vaultUtils) external;\\n    function setError(uint256 _errorCode, string calldata _error) external;\\n    function setAllowStableEquity(bool _allowStaleEquityPrice) external;\\n}\\n\",\"keccak256\":\"0x28d99ad666ae7f2912fd9b778d94791bfb9061a90261f8579d7a47e1aaad4c5a\",\"license\":\"MIT\"},\"contracts/core/interfaces/IVaultUtils.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\ninterface IVaultUtils {\\n    function updateCumulativeFundingRate(\\n        address _collateralToken, address _indexToken) external returns (bool);\\n    function validateIncreasePosition(\\n        address _account, address _collateralToken,\\n        address _indexToken, uint256 _sizeDelta, bool _isLong) external view;\\n    function validateDecreasePosition(\\n        address _account, address _collateralToken,\\n        address _indexToken, uint256 _collateralDelta,\\n        uint256 _sizeDelta, bool _isLong, address _receiver) external view;\\n    function validateLiquidation(\\n        address _account, address _collateralToken,\\n        address _indexToken, bool _isLong, bool _raise) external view returns (uint256, uint256);\\n    function getEntryFundingRate(\\n        address _collateralToken, address _indexToken, bool _isLong) external view returns (uint256);\\n    function getPositionFee(\\n        address _account, address _collateralToken,\\n        address _indexToken, bool _isLong, uint256 _sizeDelta) external view returns (uint256);\\n    function getFundingFee(\\n        address _account, address _collateralToken,\\n        address _indexToken, bool _isLong,\\n        uint256 _size, uint256 _entryFundingRate) external view returns (uint256);\\n    function getBuyZkusdFeeBasisPoints(\\n        address _token, uint256 _zkusdAmount) external view returns (uint256);\\n    function getSellZkusdFeeBasisPoints(\\n        address _token, uint256 _zkusdAmount) external view returns (uint256);\\n    function getSwapFeeBasisPoints(\\n        address _tokenIn, address _tokenOut, uint256 _zkusdAmount) external view returns (uint256);\\n    function getFeeBasisPoints(\\n        address _token, uint256 _zkusdDelta,\\n        uint256 _feeBasisPoints, uint256 _taxBasisPoints,\\n        bool _increment) external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x1efeae040950453176db5cf84c290223d6ebd4542e7457c7fe35c0d023483522\",\"license\":\"MIT\"},\"contracts/core/settings/ShortsTrackerSettings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\nimport \\\"../storage/ShortsTrackerStorage.sol\\\";\\nabstract contract ShortsTrackerSettings is ShortsTrackerStorage {\\n    /* settings */\\n    function setHandler(address _handler, bool _isActive) external onlyGov {\\n        require(_handler != address(0), Errors.SHORTSTRACKER_INVALID_HANDLER);\\n        isHandler[_handler] = _isActive;\\n    }\\n    function setIsGlobalShortDataReady(bool value) external onlyGov {\\n        isGlobalShortDataReady = value;\\n    }\\n    function setInitData(address[] calldata _tokens, uint256[] calldata _averagePrices) external onlyGov {\\n        require(!isGlobalShortDataReady, Errors.SHORTSTRACKER_ALREADY_MIGRATED);\\n        for (uint256 i = 0; i < _tokens.length; i++) {\\n            globalShortAveragePrices[_tokens[i]] = _averagePrices[i];\\n        }\\n        isGlobalShortDataReady = true;\\n    }\\n}\",\"keccak256\":\"0x58aa42b1198877ad056f5540edda449eed3102a8427bb9af85014f22e2330f46\",\"license\":\"MIT\"},\"contracts/core/storage/ShortsTrackerAggregator.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\nimport \\\"../interfaces/IVault.sol\\\";\\nimport \\\"../interfaces/IShortsTracker.sol\\\";\\nimport \\\"../../access/Governable.sol\\\";\\nimport \\\"../../libraries/math/SafeMath.sol\\\";\\nimport \\\"../../libraries/Events.sol\\\";\\nimport \\\"../../libraries/Errors.sol\\\";\\nimport \\\"../../libraries/Constants.sol\\\";\\nabstract contract ShortsTrackerAggregator is IShortsTracker, Governable {\\n}\",\"keccak256\":\"0xf2edbec8824ce407f3cd5a47526b50601bd6f54c65896d30b4fc4450510d9613\",\"license\":\"MIT\"},\"contracts/core/storage/ShortsTrackerStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\nimport \\\"./ShortsTrackerAggregator.sol\\\";\\nabstract contract ShortsTrackerStorage is ShortsTrackerAggregator {\\n    /* constructor */\\n    IVault public vault;\\n    /* Settings */\\n    mapping (address => bool) public isHandler;\\n    mapping (address => uint256) public override globalShortAveragePrices;\\n    bool public override isGlobalShortDataReady;\\n    /* misc */\\n    mapping (bytes32 => bytes32) public data;\\n    using SafeMath for uint256;\\n    modifier onlyHandler() {\\n        require(isHandler[msg.sender], Errors.SHORTSTRACKER_FORBIDDEN);\\n        _;\\n    }\\n}\",\"keccak256\":\"0x44dee9ad9842b6f77e631c89c17c8ff1536d6730c5cfcd14efe39c732a9aed34\",\"license\":\"MIT\"},\"contracts/libraries/Constants.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\nlibrary Constants {\\n    /* BASE */\\n    string public constant ZKDX_ID = \\\"ZKDX\\\";\\n    string public constant ZKDX_TOKEN_NAME = \\\"ZKDX\\\";\\n    string public constant ZKDX_TOKEN_SYMBOL = \\\"ZKDX\\\";\\n    string public constant ZKDLP_ID = \\\"ZKDLP\\\";\\n    string public constant ZKDLP_TOKEN_NAME = \\\"ZKDLP\\\";\\n    string public constant ZKDLP_TOKEN_SYMBOL = \\\"ZKDLP\\\";\\n\\n    string public constant ZKUSD_TOKEN_NAME = \\\"ZKUSD\\\";\\n    string public constant ZKUSD_TOKEN_SYMBOL = \\\"ZKUSD\\\";\\n    /* VaultPriceFeed.sol */\\n    uint256 public constant PRICE_PRECISION = 10 ** 30;\\n    uint256 public constant ONE_USD = PRICE_PRECISION;\\n    uint256 public constant BASIS_POINTS_DIVISOR = 10000;\\n    uint256 public constant MAX_SPREAD_BASIS_POINTS = 50;\\n    uint256 public constant MAX_ADJUSTMENT_INTERVAL = 2 hours;\\n    uint256 public constant MAX_ADJUSTMENT_BASIS_POINTS = 20;\\n    address constant internal FLAG_ARBITRUM_SEQ_OFFLINE = address(bytes20(bytes32(uint256(keccak256(\\\"chainlink.flags.arbitrum-seq-offline\\\")) - 1)));\\n    /* VaultUtils.sol */\\n    uint256 public constant FUNDING_RATE_PRECISION = 1000000;\\n\\n    /* Vault.sol*/\\n    uint256 public constant MIN_LEVERAGE = 10000; // 1x\\n    uint256 public constant ZKUSD_DECIMALS = 18;\\n    uint256 public constant MAX_FEE_BASIS_POINTS = 500; // 5%\\n    uint256 public constant MAX_LIQUIDATION_FEE_USD = 100 * PRICE_PRECISION; // 100 USD\\n\\n    /* OrderBook.sol */\\n    uint256 public constant ZKUSD_PRECISION = 1e18;\\n\\n    /* ZKDLP.sol */\\n    uint256 public constant ZKDLP_PRECISION = 10 ** 18;\\n    uint256 public constant MAX_COOLDOWN_DURATION = 48 hours;\\n\\n    /* ShortsTracker */\\n    uint256 public constant MAX_INT256 = uint256(type(int256).max);\\n}\\n\",\"keccak256\":\"0x049f7d98dc0cb5204187c07330c81fc8057c9471f912763fdc11f80d2ee95fb0\",\"license\":\"MIT\"},\"contracts/libraries/Errors.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\nlibrary Errors {\\n    /* Timelock Error Message*/\\n    string public constant Timelock_Invalid_Target = \\\"Timelock: invalid _target\\\";\\n    string public constant Timelock_Invalid_Buffer = \\\"Timelock: invalid _buffer\\\";\\n    string public constant Timelock_Buffer_Cannot_Be_Decreased = \\\"Timelock: buffer cannot be decreased\\\";\\n    string public constant Timelock_invalid_maxLeverage = \\\"Timelock: invalid _maxLeverage\\\";\\n    string public constant Timelock_invalid_fundingRateFactor = \\\"Timelock: invalid _fundingRateFactor\\\";\\n    string public constant Timelock_invalid_stableFundingRateFactor = \\\"Timelock: invalid _stableFundingRateFactor\\\";\\n    string public constant TIMELOCK_INVALID_MAXGASPRICE = \\\"Invalid _maxGasPrice\\\";\\n    string public constant TIMELOCK_INVALID_LENGTHS = \\\"Timelock: invalid lengths\\\";\\n    string public constant TIMELOCK_MAXTOKENSUPPLY_EXCEEDED = \\\"Timelock: maxTokenSupply exceeded\\\";\\n    string public constant TIMELOCK_ACTION_ALREADY_SIGNALLED = \\\"Timelock: action already signalled\\\";\\n    string public constant TIMELOCK_ACTION_NOT_SIGNALLED = \\\"Timelock: action not signalled\\\";\\n    string public constant TIMELOCK_ACTION_TIME_NOT_YET_PASSED = \\\"Timelock: action time not yet passed\\\";\\n    string public constant TIMELOCK_INVALID_ACTION = \\\"Timelock: invalid _action\\\";\\n    string public constant TIMELOCK_INVALID_BUFFER = \\\"Timelock: invalid _buffer\\\";\\n    /* ZKUSD.sol*/\\n    string public constant ZKUSD_FORBIDDEN = \\\"ZKUSD: forbidden\\\";\\n    /* BasePositionManagers.sol */\\n    string public constant BASEPOSITIONMANAGER_MARK_PRICE_LOWER_THAN_LIMIT      = \\\"BasePositionManager: mark price lower than limit\\\";\\n    string public constant BASEPOSITIONMANAGER_MARK_PRICE_HIGHER_THAN_LIMIT     = \\\"BasePositionManager: mark price higher than limit\\\";\\n    string public constant BASEPOSITIONMANAGER_INVALID_PATH_LENGTH              = \\\"BasePositionManager: invalid _path.length\\\";\\n    string public constant BASEPOSITIONMANAGER_INSUFFICIENT_AMOUNTOUT           = \\\"BasePositionManager: insufficient amountOut\\\";\\n    string public constant BASEPOSITIONMANAGER_MAX_GLOBAL_LONGS_EXCEEDED        = \\\"BasePositionManager: max global longs exceeded\\\";\\n    string public constant BASEPOSITIONMANAGER_MAX_GLOBAL_SHORTS_EXCEEDED       = \\\"BasePositionManager: max global shorts exceeded\\\";\\n    string public constant BASEPOSITIONMANAGER_INVALID_SENDER                   = \\\"BasePositionManager: invalid sender\\\";\\n    string public constant BASEPOSITIONMANAGER_TRANSFER_OUT_FAILED              = \\\"BasePositionManager: failed to transfer out ether\\\";\\n    /* PositionManager.sol */\\n    string public constant POSITIONMANAGER_INVALID_PATH_LENGTH                  = \\\"PositionManager: invalid _path.length\\\";\\n    string public constant POSITIONMANAGER_INVALID_PATH                         = \\\"PositionManager: invalid _path\\\";\\n    string public constant POSITIONMANAGER_LONG_DEPOSIT                         = \\\"PositionManager: long deposit\\\";\\n    string public constant POSITIONMANAGER_LONG_LEVERAGE_DECREASE               = \\\"PositionManager: long leverage decrease\\\";\\n    string public constant POSITIONMANAGER_FORBIDDEN                            = \\\"PositionManager: forbidden\\\";\\n    string public constant POSITIONMANAGER_INSUFFICIENT_FEE                     = \\\"PositionManager: insufficient fee\\\";\\n    /* Router.sol*/\\n    string public constant ROUTER_FORBIDDEN                                     = \\\"Router: forbidden\\\";\\n    /* ZkdlpManager.sol */\\n    string public constant ZKDLPMANAGER_ACTION_NOT_ENABLED                      = \\\"ZkdlpManager: action not enabled\\\";\\n    string public constant ZKDLPMANAGER_INVALID_WEIGHT                          = \\\"ZkdlpManager: invalid weight\\\";\\n    string public constant ZKDLPMANAGER_INVALID_COOLDOWNDURATION                = \\\"ZkdlpManager: invalid _cooldownDuration\\\";\\n    string public constant ZKDLPMANAGER_INVALID_AMOUNT                          = \\\"ZkdlpManager: invalid _amount\\\";\\n    string public constant ZKDLPMANAGER_INSUFFICIENT_ZKUSD_OUTPUT               = \\\"ZkdlpManager: insufficient ZKUSD output\\\";\\n    string public constant ZKDLPMANAGER_INSUFFICIENT_ZKDLP_OUTPUT               = \\\"ZkdlpManager: insufficient ZKDLP output\\\";\\n    string public constant ZKDLPMANAGER_INVALID_ZKDLPAMOUNT                     = \\\"ZkdlpManager: invalid _ZKDLPAmount\\\";\\n    string public constant ZKDLPMANAGER_COOLDOWN_DURATION_NOT_YET_PASSED        = \\\"ZkdlpManager: cooldown duration not yet passed\\\";\\n    string public constant ZKDLPMANAGER_INSUFFICIENT_OUTPUT                     = \\\"ZkdlpManager: insufficient output\\\";\\n    string public constant ZKDLPMANAGER_FORBIDDEN                               = \\\"ZkdlpManager: forbidden\\\";\\n    /* ShortsTrack.sol*/\\n    string public constant SHORTSTRACKER_FORBIDDEN                              = \\\"ShortsTracker: forbidden\\\";\\n    string public constant SHORTSTRACKER_INVALID_HANDLER                        = \\\"ShortsTracker: invalid _handler\\\";\\n    string public constant SHORTSTRACKER_ALREADY_MIGRATED                       = \\\"ShortsTracker: already migrated\\\";\\n    string public constant SHORTSTRACKER_OVERFLOW                               = \\\"ShortsTracker: overflow\\\";\\n    /* VaultUtils.sol*/\\n    string public constant VAULT_LOSSES_EXCEED_COLLATERAL                       = \\\"Vault: losses exceed collateral\\\";\\n    string public constant VAULT_FEES_EXCEED_COLLATERAL                         = \\\"Vault: fees exceed collateral\\\";\\n    string public constant VAULT_LIQUIDATION_FEES_EXCEED_COLLATERAL             = \\\"Vault: liquidation fees exceed collateral\\\";\\n    string public constant VAULT_MAXLEVERAGE_EXCEEDED                           = \\\"Vault: maxLeverage exceeded\\\";\\n    /* VaultInternal.sol*/\\n    string internal constant VAULT_POOLAMOUNT_EXCEEDED                          = \\\"Vault: poolAmount exceeded\\\";\\n    string internal constant VAULT_INSUFFICIENT_RESERVE                         = \\\"Vault: insufficient reserve\\\";\\n    string internal constant VAULT_MAX_SHORTS_EXCEEDED                          = \\\"Vault: max shorts exceeded\\\";\\n    string internal constant VAULT_POOLAMOUNT_BUFFER                            = \\\"Vault: poolAmount < buffer\\\";\\n    string internal constant VAULT_INVALID_ERRORCONTROLLER                      = \\\"Vault: invalid errorController\\\";\\n    /* Router.sol */\\n    string internal constant ROUTER_INVALID_SENDER                              = \\\"Router: invalid sender\\\";\\n    string internal constant ROUTER_INVALID_PATH                                = \\\"Router: invalid _path\\\";\\n    string internal constant ROUTER_MARK_PRICE_HIGHER_THAN_LIMIT                = \\\"Router: mark price higher than limit\\\";\\n    string internal constant ROUTER_MARK_PRICE_LOWER_THAN_LIMIT                 = \\\"Router: mark price lower than limit\\\";\\n    string internal constant ROUTER_INVALID_PATH_LENGTH                         = \\\"Router: invalid _path.length\\\";\\n    string internal constant ROUTER_INSUFFICIENT_AMOUNTOUT                      = \\\"Router: insufficient amountOut\\\";\\n    string internal constant ROUTER_INVALID_PLUGIN                              = \\\"Router: invalid plugin\\\";\\n    /* OrderBook.sol*/\\n    string internal constant ORDERBOOK_FORBIDDEN                                = \\\"OrderBook: forbidden\\\";\\n    string internal constant ORDERBOOK_ALREADY_INITIALIZED                      = \\\"OrderBook: already initialized\\\";\\n    string internal constant ORDERBOOK_INVALID_SENDER                           = \\\"OrderBook: invalid sender\\\";\\n    string internal constant ORDERBOOK_INVALID_PATH_LENGTH                      = \\\"OrderBook: invalid _path.length\\\";\\n    string internal constant ORDERBOOK_INVALID_PATH                             = \\\"OrderBook: invalid _path\\\";\\n    string internal constant ORDERBOOK_INVALID_AMOUNTIN                         = \\\"OrderBook: invalid _amountIn\\\";\\n    string internal constant ORDERBOOK_INSUFFICIENT_EXECUTION_FEE               = \\\"OrderBook: insufficient execution fee\\\";\\n    string internal constant ORDERBOOK_ONLY_WETH_COULD_BE_WRAPPED               = \\\"OrderBook: only weth could be wrapped\\\";\\n    string internal constant ORDERBOOK_INCORRECT_VALUE_TRANSFERRED              = \\\"OrderBook: incorrect value transferred\\\";\\n    string internal constant ORDERBOOK_INCORRECT_EXECUTION_FEE_TRANSFERRED      = \\\"OrderBook: incorrect execution fee transferred\\\";\\n    string internal constant ORDERBOOK_NON_EXISTENT_ORDER                       = \\\"OrderBook: non-existent order\\\";\\n    string internal constant ORDERBOOK_INVALID_PRICE_FOR_EXECUTION              = \\\"OrderBook: invalid price for execution\\\";\\n    string internal constant ORDERBOOK_INSUFFICIENT_COLLATERAL                  = \\\"OrderBook: insufficient collateral\\\";\\n    string internal constant ORDERBOOK_INSUFFICIENT_AMOUNTOUT                   = \\\"OrderBook: insufficient amountOut\\\";\\n    /* RewardRouterV2.sol */\\n    string internal constant REWARDROUTER_INVALID_AMOUNT                        = \\\"RewardRouter: invalid _amount\\\";\\n    string internal constant REWARDROUTER_INVALID_MSG_VALUE                     = \\\"RewardRouter: invalid msg.value\\\";\\n    string internal constant REWARDROUTER_ALREADY_INITIALIZED                   = \\\"RewardRouter: already initialized\\\";\\n    string internal constant REWARDROUTER_INVALID_ZKUSDAMOUNT                   = \\\"RewardRouter: invalid _zkusdAmount\\\";\\n\\n    /* YieldToken.sol */\\n    string public constant YIELDTOKEN_ACCOUNT_ALREADY_MARKED                    = \\\"YieldToken: _account already marked\\\";\\n    string public constant YIELDTOKEN_ACCOUNT_NOT_MARKED                        = \\\"YieldToken: _account not marked\\\";\\n    string public constant YIELDTOKEN_TRANSFER_AMOUNT_EXCEEDS_ALLOWANCE         = \\\"YieldToken: transfer amount exceeds allowance\\\";\\n    string public constant YIELDTOKEN_MINT_TO_THE_ZERO_ADDRESS                  = \\\"YieldToken: mint to the zero address\\\";\\n    string public constant YIELDTOKEN_BURN_FROM_THE_ZERO_ADDRESS                = \\\"YieldToken: burn from the zero address\\\";\\n    string public constant YIELDTOKEN_BURN_AMOUNT_EXCEEDS_BALANCE               = \\\"YieldToken: burn amount exceeds balance\\\";\\n    string public constant YIELDTOKEN_TRANSFER_FROM_THE_ZERO_ADDRESS            = \\\"YieldToken: transfer from the zero address\\\";\\n    string public constant YIELDTOKEN_TRANSFER_TO_THE_ZERO_ADDRESS              = \\\"YieldToken: transfer to the zero address\\\";\\n    string public constant YIELDTOKEN_MSG_SENDER_NOT_WHITELISTED                = \\\"YieldToken: msg.sender not whitelisted\\\";\\n    string public constant YIELDTOKEN_TRANSFER_AMOUNT_EXCEEDS_BALANCE           = \\\"YieldToken: transfer amount exceeds balance\\\";\\n    string public constant YIELDTOKEN_APPROVE_FROM_THE_ZERO_ADDRESS             = \\\"YieldToken: approve from the zero address\\\";\\n    string public constant YIELDTOKEN_APPROVE_TO_THE_ZERO_ADDRESS               = \\\"YieldToken: approve to the zero address\\\";\\n\\n    string public constant MINTABLEBASETOKEN_FORBIDDEN                          = \\\"MintableBaseToken: forbidden\\\";\\n    string public constant BASETOKEN_FORBIDDEN                                  = \\\"BaseToken: forbidden\\\";\\n    string public constant BASETOKEN_ACCOUNT_ALREADY_MARKED                     = \\\"BaseToken: _account already marked\\\";\\n    string public constant BASETOKEN_ACCOUNT_NOT_MARKED                         = \\\"BaseToken: _account not marked\\\";\\n    string public constant BASETOKEN_TRANSFER_AMOUNT_EXCEEDS_ALLOWANCE          = \\\"BaseToken: transfer amount exceeds allowance\\\";\\n    string public constant BASETOKEN_MINT_TO_THE_ZERO_ADDRESS                   = \\\"BaseToken: mint to the zero address\\\";\\n    string public constant BASETOKEN_BURN_FROM_THE_ZERO_ADDRESS                 = \\\"BaseToken: burn from the zero address\\\";\\n    string public constant BASETOKEN_BURN_AMOUNT_EXCEEDS_BALANCE                = \\\"BaseToken: burn amount exceeds balance\\\";\\n    string public constant BASETOKEN_TRANSFER_FROM_THE_ZERO_ADDRESS             = \\\"BaseToken: transfer from the zero address\\\";\\n    string public constant BASETOKEN_TRANSFER_TO_THE_ZERO_ADDRESS               = \\\"BaseToken: transfer to the zero address\\\";\\n    string public constant BASETOKEN_MSG_SENDER_NOT_WHITELISTED                 = \\\"BaseToken: msg.sender not whitelisted\\\";\\n    string public constant BASETOKEN_TRANSFER_AMOUNT_EXCEEDS_BALANCE            = \\\"BaseToken: transfer amount exceeds balance\\\";\\n    string public constant BASETOKEN_APPROVE_FROM_THE_ZERO_ADDRESS              = \\\"BaseToken: approve from the zero address\\\";\\n    string public constant BASETOKEN_APPROVE_TO_THE_ZERO_ADDRESS                = \\\"BaseToken: approve to the zero address\\\";\\n}\\n\",\"keccak256\":\"0x05483ba94e083a7e9f288fa9e1ea4d0961880cf669c779b8ad46747b205615d8\",\"license\":\"MIT\"},\"contracts/libraries/Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.6.0;\\nlibrary Events {\\n    /* BasePositionManager Events */\\n    event SetDepositFee(uint256 depositFee);\\n    event SetIncreasePositionBufferBps(uint256 increasePositionBufferBps);\\n    event SetAdmin(address admin);\\n    event WithdrawFees(address token, address receiver, uint256 amount);\\n    event SetMaxGlobalSizes(address[] tokens, uint256[] longSizes, uint256[] shortSizes);\\n    /*Position Manager Events*/\\n    event SetOrderKeeper(address indexed account, bool isActive);\\n    event SetLiquidator(address indexed account, bool isActive);\\n    event SetPartner(address account, bool isActive);\\n    event SetOpened(bool opened);\\n    event SetShouldValidateIncreaseOrder(bool shouldValidateIncreaseOrder);\\n    /* Orderbook.sol events */\\n    event CreateSwapOrder(\\n        address indexed account, uint256 orderIndex,\\n        address[] path, uint256 amountIn, uint256 minOut,\\n        uint256 triggerRatio, bool triggerAboveThreshold, bool shouldUnwrap, uint256 executionFee);\\n    event CancelSwapOrder(\\n        address indexed account, uint256 orderIndex,\\n        address[] path, uint256 amountIn, uint256 minOut,\\n        uint256 triggerRatio, bool triggerAboveThreshold, bool shouldUnwrap, uint256 executionFee);\\n    event UpdateSwapOrder(\\n        address indexed account, uint256 ordexIndex, address[] path, uint256 amountIn, uint256 minOut, uint256 triggerRatio, bool triggerAboveThreshold, bool shouldUnwrap, uint256 executionFee);\\n    event ExecuteSwapOrder(\\n        address indexed account, uint256 orderIndex,\\n        address[] path, uint256 amountIn, uint256 minOut,\\n        uint256 amountOut, uint256 triggerRatio,\\n        bool triggerAboveThreshold, bool shouldUnwrap, uint256 executionFee);\\n    event Initialize(\\n        address router, address vault, address weth,\\n        address zkusd, uint256 minExecutionFee);\\n    event UpdateMinExecutionFee(uint256 minExecutionFee);\\n    event UpdateGov(address gov);\\n    /* Router.sol events*/\\n    event Swap(address account, address tokenIn, address tokenOut, uint256 amountIn, uint256 amountOut);\\n    /* ShortsTracker.sol events*/\\n    event GlobalShortDataUpdated(address indexed token, uint256 globalShortSize, uint256 globalShortAveragePrice);\\n    /* Vault.sol events */\\n    event BuyZKUSD(\\n        address account, address token,\\n        uint256 tokenAmount, uint256 zkusdAmount, uint256 feeBasisPoints);\\n    event SellZKUSD(\\n        address account, address token,\\n        uint256 zkusdAmount, uint256 tokenAmount, uint256 feeBasisPoints);\\n    event Swap(\\n        address account, address tokenIn,\\n        address tokenOut, uint256 amountIn,\\n        uint256 amountOut, uint256 amountOutAfterFees,\\n        uint256 feeBasisPoints);\\n    event IncreasePosition(\\n        bytes32 key, address account,\\n        address collateralToken, address indexToken,\\n        uint256 collateralDelta, uint256 sizeDelta,\\n        bool isLong, uint256 price, uint256 fee);\\n    event DecreasePosition(\\n        bytes32 key, address account,\\n        address collateralToken, address indexToken,\\n        uint256 collateralDelta, uint256 sizeDelta,\\n        bool isLong, uint256 price, uint256 fee);\\n    event LiquidatePosition(\\n        bytes32 key, address account, address collateralToken,\\n        address indexToken, bool isLong, uint256 size,\\n        uint256 collateral, uint256 reserveAmount, int256 realisedPnl, uint256 markPrice);\\n    event UpdatePosition(\\n        bytes32 key, uint256 size, uint256 collateral,\\n        uint256 averagePrice, uint256 entryFundingRate,\\n        uint256 reserveAmount, int256 realisedPnl, uint256 markPrice);\\n    event ClosePosition(\\n        bytes32 key, uint256 size, uint256 collateral,\\n        uint256 averagePrice, uint256 entryFundingRate, uint256 reserveAmount, int256 realisedPnl);\\n    event UpdateFundingRate(address token, uint256 fundingRate);\\n    event UpdatePnl(bytes32 key, bool hasProfit, uint256 delta);\\n    event CollectSwapFees(address token, uint256 feeUsd, uint256 feeTokens);\\n    event CollectMarginFees(address token, uint256 feeUsd, uint256 feeTokens);\\n    event DirectPoolDeposit(address token, uint256 amount);\\n    event IncreasePoolAmount(address token, uint256 amount);\\n    event DecreasePoolAmount(address token, uint256 amount);\\n    event IncreaseZkusdAmount(address token, uint256 amount);\\n    event DecreaseZkusdAmount(address token, uint256 amount);\\n    event IncreaseReservedAmount(address token, uint256 amount);\\n    event DecreaseReservedAmount(address token, uint256 amount);\\n    event IncreaseGuaranteedUsd(address token, uint256 amount);\\n    event DecreaseGuaranteedUsd(address token, uint256 amount);\\n    /* Timelock.sol events */\\n    event SignalPendingAction(bytes32 action);\\n    event SignalApprove(address token, address spender, uint256 amount, bytes32 action);\\n    event SignalWithdrawToken(address target, address token, address receiver, uint256 amount, bytes32 action);\\n    event SignalMint(address token, address receiver, uint256 amount, bytes32 action);\\n    event SignalSetGov(address target, address gov, bytes32 action);\\n    event SignalSetHandler(address target, address handler, bool isActive, bytes32 action);\\n    event SignalSetPriceFeed(address vault, address priceFeed, bytes32 action);\\n    event SignalRedeemZkusd(address vault, address token, uint256 amount);\\n    event SignalVaultSetTokenConfig(\\n        address vault, address token, uint256 tokenDecimals,\\n        uint256 tokenWeight, uint256 minProfitBps, uint256 maxZkusdAmount,\\n        bool isStable, bool isShortable);\\n    event ClearAction(bytes32 action);\\n    /* ZkdlpManager.sol */\\n    event AddLiquidity(address account, address token, uint256 amount, uint256 aumInUsd, uint256 zkdlpSupply, uint256 zkusdAmount, uint256 mintAmount);\\n    event RemoveLiquidity(address account, address token, uint256 zkdlpAmount, uint256 aumInUsd, uint256 zkdlpSupply, uint256 zkusdAmount, uint256 amountOut);\\n    /* RewardRouterV2 */\\n    event StakeZkdx(address account, address token, uint256 amount);\\n    event UnstakeZkdx(address account, address token, uint256 amount);\\n    event StakeZkdlp(address account, uint256 amount);\\n    event UnstakeZkdlp(address account, uint256 amount);\\n\\n    /* OrderBook.sol */\\n    event CreateIncreaseOrder(\\n        address indexed account,\\n        uint256 orderIndex,\\n        address purchaseToken,\\n        uint256 purchaseTokenAmount,\\n        address collateralToken,\\n        address indexToken,\\n        uint256 sizeDelta,\\n        bool isLong,\\n        uint256 triggerPrice,\\n        bool triggerAboveThreshold,\\n        uint256 executionFee\\n    );\\n\\n    event CancelIncreaseOrder(\\n        address indexed account,\\n        uint256 orderIndex,\\n        address purchaseToken,\\n        uint256 purchaseTokenAmount,\\n        address collateralToken,\\n        address indexToken,\\n        uint256 sizeDelta,\\n        bool isLong,\\n        uint256 triggerPrice,\\n        bool triggerAboveThreshold,\\n        uint256 executionFee\\n    );\\n\\n    event ExecuteIncreaseOrder(\\n        address indexed account,\\n        uint256 orderIndex,\\n        address purchaseToken,\\n        uint256 purchaseTokenAmount,\\n        address collateralToken,\\n        address indexToken,\\n        uint256 sizeDelta,\\n        bool isLong,\\n        uint256 triggerPrice,\\n        bool triggerAboveThreshold,\\n        uint256 executionFee,\\n        uint256 executionPrice\\n    );\\n\\n    event UpdateIncreaseOrder(\\n        address indexed account,\\n        uint256 orderIndex,\\n        address collateralToken,\\n        address indexToken,\\n        bool isLong,\\n        uint256 sizeDelta,\\n        uint256 triggerPrice,\\n        bool triggerAboveThreshold\\n    );\\n\\n    event CreateDecreaseOrder(\\n        address indexed account,\\n        uint256 orderIndex,\\n        address collateralToken,\\n        uint256 collateralDelta,\\n        address indexToken,\\n        uint256 sizeDelta,\\n        bool isLong,\\n        uint256 triggerPrice,\\n        bool triggerAboveThreshold,\\n        uint256 executionFee\\n    );\\n\\n    event CancelDecreaseOrder(\\n        address indexed account,\\n        uint256 orderIndex,\\n        address collateralToken,\\n        uint256 collateralDelta,\\n        address indexToken,\\n        uint256 sizeDelta,\\n        bool isLong,\\n        uint256 triggerPrice,\\n        bool triggerAboveThreshold,\\n        uint256 executionFee\\n    );\\n\\n    event ExecuteDecreaseOrder(\\n        address indexed account,\\n        uint256 orderIndex,\\n        address collateralToken,\\n        uint256 collateralDelta,\\n        address indexToken,\\n        uint256 sizeDelta,\\n        bool isLong,\\n        uint256 triggerPrice,\\n        bool triggerAboveThreshold,\\n        uint256 executionFee,\\n        uint256 executionPrice\\n    );\\n\\n    event UpdateDecreaseOrder(\\n        address indexed account,\\n        uint256 orderIndex,\\n        address collateralToken,\\n        uint256 collateralDelta,\\n        address indexToken,\\n        uint256 sizeDelta,\\n        bool isLong,\\n        uint256 triggerPrice,\\n        bool triggerAboveThreshold\\n    );\\n}\\n\",\"keccak256\":\"0x3656730f42a4614b3704801573c526b2a0da4f7d170071c50767a688bcd753f8\",\"license\":\"MIT\"},\"contracts/libraries/math/SafeMath.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.6.12;\\n\\n/**\\n * @dev Wrappers over Solidity's arithmetic operations with added overflow\\n * checks.\\n *\\n * Arithmetic operations in Solidity wrap on overflow. This can easily result\\n * in bugs, because programmers usually assume that an overflow raises an\\n * error, which is the standard behavior in high level programming languages.\\n * `SafeMath` restores this intuition by reverting the transaction when an\\n * operation overflows.\\n *\\n * Using this library instead of the unchecked operations eliminates an entire\\n * class of bugs, so it's recommended to use it always.\\n */\\nlibrary SafeMath {\\n    /**\\n     * @dev Returns the addition of two unsigned integers, reverting on\\n     * overflow.\\n     *\\n     * Counterpart to Solidity's `+` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Addition cannot overflow.\\n     */\\n    function add(uint256 a, uint256 b) internal pure returns (uint256) {\\n        uint256 c = a + b;\\n        require(c >= a, \\\"SafeMath: addition overflow\\\");\\n\\n        return c;\\n    }\\n\\n    /**\\n     * @dev Returns the subtraction of two unsigned integers, reverting on\\n     * overflow (when the result is negative).\\n     *\\n     * Counterpart to Solidity's `-` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Subtraction cannot overflow.\\n     */\\n    function sub(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return sub(a, b, \\\"SafeMath: subtraction overflow\\\");\\n    }\\n\\n    /**\\n     * @dev Returns the subtraction of two unsigned integers, reverting with custom message on\\n     * overflow (when the result is negative).\\n     *\\n     * Counterpart to Solidity's `-` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Subtraction cannot overflow.\\n     */\\n    function sub(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {\\n        require(b <= a, errorMessage);\\n        uint256 c = a - b;\\n\\n        return c;\\n    }\\n\\n    /**\\n     * @dev Returns the multiplication of two unsigned integers, reverting on\\n     * overflow.\\n     *\\n     * Counterpart to Solidity's `*` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Multiplication cannot overflow.\\n     */\\n    function mul(uint256 a, uint256 b) internal pure returns (uint256) {\\n        // Gas optimization: this is cheaper than requiring 'a' not being zero, but the\\n        // benefit is lost if 'b' is also tested.\\n        // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522\\n        if (a == 0) {\\n            return 0;\\n        }\\n\\n        uint256 c = a * b;\\n        require(c / a == b, \\\"SafeMath: multiplication overflow\\\");\\n\\n        return c;\\n    }\\n\\n    /**\\n     * @dev Returns the integer division of two unsigned integers. Reverts on\\n     * division by zero. The result is rounded towards zero.\\n     *\\n     * Counterpart to Solidity's `/` operator. Note: this function uses a\\n     * `revert` opcode (which leaves remaining gas untouched) while Solidity\\n     * uses an invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function div(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return div(a, b, \\\"SafeMath: division by zero\\\");\\n    }\\n\\n    /**\\n     * @dev Returns the integer division of two unsigned integers. Reverts with custom message on\\n     * division by zero. The result is rounded towards zero.\\n     *\\n     * Counterpart to Solidity's `/` operator. Note: this function uses a\\n     * `revert` opcode (which leaves remaining gas untouched) while Solidity\\n     * uses an invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {\\n        require(b > 0, errorMessage);\\n        uint256 c = a / b;\\n        // assert(a == b * c + a % b); // There is no case in which this doesn't hold\\n\\n        return c;\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\\n     * Reverts when dividing by zero.\\n     *\\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\\n     * invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function mod(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return mod(a, b, \\\"SafeMath: modulo by zero\\\");\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\\n     * Reverts with custom message when dividing by zero.\\n     *\\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\\n     * invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function mod(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {\\n        require(b != 0, errorMessage);\\n        return a % b;\\n    }\\n}\\n\",\"keccak256\":\"0x41b0da7db3e1f79b338824fed2bc4732430b78002a9d51c2cfa86ad5a12c2763\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161100c38038061100c8339818101604052602081101561003357600080fd5b5051600080546001600160a01b03199081163317909155600180546001600160a01b0390931692909116919091179055610f9a806100726000396000f3fe608060405234801561001057600080fd5b50600436106100bf5760003560e01c80639cb7de4b1161007c5780639cb7de4b146101a05780639cdeb593146101ce578063a83b75fd14610231578063bbd9718714610275578063cfad57a214610333578063f3238cec14610359578063fbfa77cf146103ab576100bf565b80630147fb0c146100c457806312d43a51146100f35780633d30cabf1461011757806346ea87af1461013857806362749803146101725780639a11178f14610198575b600080fd5b6100e1600480360360208110156100da57600080fd5b50356103b3565b60408051918252519081900360200190f35b6100fb6103c5565b604080516001600160a01b039092168252519081900360200190f35b6101366004803603602081101561012d57600080fd5b503515156103d4565b005b61015e6004803603602081101561014e57600080fd5b50356001600160a01b031661043e565b604080519115158252519081900360200190f35b6100e16004803603602081101561018857600080fd5b50356001600160a01b0316610453565b61015e610465565b610136600480360360408110156101b657600080fd5b506001600160a01b038135169060200135151561046e565b610218600480360360c08110156101e457600080fd5b506001600160a01b03813581169160208101358216916040820135169060608101359060808101359060a0013515156105b7565b6040805192835260208301919091528051918290030190f35b6100e1600480360360a081101561024757600080fd5b506001600160a01b038135811691602081013582169160408201351690606081013590608001351515610711565b6101366004803603604081101561028b57600080fd5b810190602081018135600160201b8111156102a557600080fd5b8201836020820111156102b757600080fd5b803590602001918460208302840111600160201b831117156102d857600080fd5b919390929091602081019035600160201b8111156102f557600080fd5b82018360208201111561030757600080fd5b803590602001918460208302840111600160201b8311171561032857600080fd5b509092509050610925565b6101366004803603602081101561034957600080fd5b50356001600160a01b0316610a71565b610136600480360360e081101561036f57600080fd5b506001600160a01b038135811691602081013582169160408201351690606081013515159060808101359060a08101359060c001351515610aea565b6100fb610c0d565b60056020526000908152604090205481565b6000546001600160a01b031681565b6000546001600160a01b0316331461042b576040805162461bcd60e51b815260206004820152601560248201527423b7bb32b93730b136329d103337b93134b23232b760591b604482015290519081900360640190fd5b6004805460ff1916911515919091179055565b60026020526000908152604090205460ff1681565b60036020526000908152604090205481565b60045460ff1681565b6000546001600160a01b031633146104c5576040805162461bcd60e51b815260206004820152601560248201527423b7bb32b93730b136329d103337b93134b23232b760591b604482015290519081900360640190fd5b60408051808201909152601f81527f53686f727473547261636b65723a20696e76616c6964205f68616e646c65720060208201526001600160a01b03831661058b5760405162461bcd60e51b81526004018080602001828103825283818151815260200191508051906020019080838360005b83811015610550578181015183820152602001610538565b50505050905090810190601f16801561057d5780820380516001836020036101000a031916815260200191505b509250505060405180910390fd5b506001600160a01b03919091166000908152600260205260409020805460ff1916911515919091179055565b60008060006105c98989898888610711565b6001600160a01b0388166000908152600360205260408120549192508782116105fb576105f68883610c1c565b610605565b6106058289610c1c565b6001546040805163114f1b5560e31b81526001600160a01b038d811660048301529151939450600093849384931691638a78daa8916024808301926020929190829003018186803b15801561065957600080fd5b505afa15801561066d573d6000803e3d6000fd5b505050506040513d602081101561068357600080fd5b505190508861069b57610696818b610c1c565b6106a5565b6106a5818b610c67565b9250826106be5760008097509750505050505050610706565b846106d457828b97509750505050505050610706565b6106e8856106e28387610cc1565b90610d1a565b91505060006106fa858c85858a610d5c565b92975091955050505050505b965096945050505050565b600081156107215750600061091c565b60015460408051634a3f088d60e01b81526001600160a01b038981166004830152888116602483015287811660448301526000606483018190529251931692829182918591634a3f088d91608480830192610100929190829003018186803b15801561078c57600080fd5b505afa1580156107a0573d6000803e3d6000fd5b505050506040513d6101008110156107b757600080fd5b50805160408083015160e0909301518151635c07eaab60e01b81526001600160a01b038d811660048301526024820185905260448201869052600060648301819052608483018490528451959950959750919550849391891692635c07eaab9260a480840193829003018186803b15801561083157600080fd5b505afa158015610845573d6000803e3d6000fd5b505050506040513d604081101561085b57600080fd5b50805160209091015190925090506000610879866106e28c85610cc1565b90506001600160ff1b0381106040518060400160405280601781526020017653686f727473547261636b65723a206f766572666c6f7760481b815250906109015760405162461bcd60e51b8152602060048201818152835160248401528351909283926044909101919085019080838360008315610550578181015183820152602001610538565b50826109105780600003610912565b805b9750505050505050505b95945050505050565b6000546001600160a01b0316331461097c576040805162461bcd60e51b815260206004820152601560248201527423b7bb32b93730b136329d103337b93134b23232b760591b604482015290519081900360640190fd5b60045460408051808201909152601f81527f53686f727473547261636b65723a20616c7265616479206d696772617465640060208201529060ff1615610a035760405162461bcd60e51b8152602060048201818152835160248401528351909283926044909101919085019080838360008315610550578181015183820152602001610538565b5060005b83811015610a5d57828282818110610a1b57fe5b9050602002013560036000878785818110610a3257fe5b602090810292909201356001600160a01b031683525081019190915260400160002055600101610a07565b50506004805460ff19166001179055505050565b6000546001600160a01b03163314610ac8576040805162461bcd60e51b815260206004820152601560248201527423b7bb32b93730b136329d103337b93134b23232b760591b604482015290519081900360640190fd5b600080546001600160a01b0319166001600160a01b0392909216919091179055565b33600090815260026020908152604091829020548251808401909352601883527729b437b93a39aa3930b1b5b2b91d103337b93134b23232b760411b9183019190915260ff16610b7b5760405162461bcd60e51b8152602060048201818152835160248401528351909283926044909101919085019080838360008315610550578181015183820152602001610538565b508380610b86575082155b15610b9057610c04565b60045460ff16610b9f57610c04565b600080610bb08989898789886105b7565b91509150610bbe8782610dab565b604080518381526020810183905281516001600160a01b038a16927fd6137be44db128ffcf1ea1821dbe8f889f67f949be7656c2d8acba2a4a891a02928290030190a250505b50505050505050565b6001546001600160a01b031681565b6000610c5e83836040518060400160405280601e81526020017f536166654d6174683a207375627472616374696f6e206f766572666c6f770000815250610dc7565b90505b92915050565b600082820183811015610c5e576040805162461bcd60e51b815260206004820152601b60248201527f536166654d6174683a206164646974696f6e206f766572666c6f770000000000604482015290519081900360640190fd5b600082610cd057506000610c61565b82820282848281610cdd57fe5b0414610c5e5760405162461bcd60e51b8152600401808060200182810382526021815260200180610f446021913960400191505060405180910390fd5b6000610c5e83836040518060400160405280601a81526020017f536166654d6174683a206469766973696f6e206279207a65726f000000000000815250610e21565b6000806000610d6d85898987610e86565b915091506000610d9e83610d8a57610d858884610c67565b610d94565b610d948884610c1c565b6106e28a8a610cc1565b9998505050505050505050565b6001600160a01b03909116600090815260036020526040902055565b60008184841115610e195760405162461bcd60e51b8152602060048201818152835160248401528351909283926044909101919085019080838360008315610550578181015183820152602001610538565b505050900390565b60008183610e705760405162461bcd60e51b8152602060048201818152835160248401528351909283926044909101919085019080838360008315610550578181015183820152602001610538565b506000838581610e7c57fe5b0495945050505050565b6000808385118015610ee5576000841315610eca5786841115610eb857610ead8488610c1c565b965060009050610ec5565b610ec28785610c1c565b96505b610edb565b610ed8876000869003610c67565b96505b9150859050610f3a565b6000841315610eff57610ef88785610c67565b9650610f34565b86846000031115610f2357610f18600085900388610c1c565b965060019050610f34565b610f31876000869003610c1c565b96505b91508590505b9450949250505056fe536166654d6174683a206d756c7469706c69636174696f6e206f766572666c6f77a264697066735822122011522c1fb38f8dd92a1665c5acfdc6c56dc6e819fd8c6e570374ab96566d0a3564736f6c634300060c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100bf5760003560e01c80639cb7de4b1161007c5780639cb7de4b146101a05780639cdeb593146101ce578063a83b75fd14610231578063bbd9718714610275578063cfad57a214610333578063f3238cec14610359578063fbfa77cf146103ab576100bf565b80630147fb0c146100c457806312d43a51146100f35780633d30cabf1461011757806346ea87af1461013857806362749803146101725780639a11178f14610198575b600080fd5b6100e1600480360360208110156100da57600080fd5b50356103b3565b60408051918252519081900360200190f35b6100fb6103c5565b604080516001600160a01b039092168252519081900360200190f35b6101366004803603602081101561012d57600080fd5b503515156103d4565b005b61015e6004803603602081101561014e57600080fd5b50356001600160a01b031661043e565b604080519115158252519081900360200190f35b6100e16004803603602081101561018857600080fd5b50356001600160a01b0316610453565b61015e610465565b610136600480360360408110156101b657600080fd5b506001600160a01b038135169060200135151561046e565b610218600480360360c08110156101e457600080fd5b506001600160a01b03813581169160208101358216916040820135169060608101359060808101359060a0013515156105b7565b6040805192835260208301919091528051918290030190f35b6100e1600480360360a081101561024757600080fd5b506001600160a01b038135811691602081013582169160408201351690606081013590608001351515610711565b6101366004803603604081101561028b57600080fd5b810190602081018135600160201b8111156102a557600080fd5b8201836020820111156102b757600080fd5b803590602001918460208302840111600160201b831117156102d857600080fd5b919390929091602081019035600160201b8111156102f557600080fd5b82018360208201111561030757600080fd5b803590602001918460208302840111600160201b8311171561032857600080fd5b509092509050610925565b6101366004803603602081101561034957600080fd5b50356001600160a01b0316610a71565b610136600480360360e081101561036f57600080fd5b506001600160a01b038135811691602081013582169160408201351690606081013515159060808101359060a08101359060c001351515610aea565b6100fb610c0d565b60056020526000908152604090205481565b6000546001600160a01b031681565b6000546001600160a01b0316331461042b576040805162461bcd60e51b815260206004820152601560248201527423b7bb32b93730b136329d103337b93134b23232b760591b604482015290519081900360640190fd5b6004805460ff1916911515919091179055565b60026020526000908152604090205460ff1681565b60036020526000908152604090205481565b60045460ff1681565b6000546001600160a01b031633146104c5576040805162461bcd60e51b815260206004820152601560248201527423b7bb32b93730b136329d103337b93134b23232b760591b604482015290519081900360640190fd5b60408051808201909152601f81527f53686f727473547261636b65723a20696e76616c6964205f68616e646c65720060208201526001600160a01b03831661058b5760405162461bcd60e51b81526004018080602001828103825283818151815260200191508051906020019080838360005b83811015610550578181015183820152602001610538565b50505050905090810190601f16801561057d5780820380516001836020036101000a031916815260200191505b509250505060405180910390fd5b506001600160a01b03919091166000908152600260205260409020805460ff1916911515919091179055565b60008060006105c98989898888610711565b6001600160a01b0388166000908152600360205260408120549192508782116105fb576105f68883610c1c565b610605565b6106058289610c1c565b6001546040805163114f1b5560e31b81526001600160a01b038d811660048301529151939450600093849384931691638a78daa8916024808301926020929190829003018186803b15801561065957600080fd5b505afa15801561066d573d6000803e3d6000fd5b505050506040513d602081101561068357600080fd5b505190508861069b57610696818b610c1c565b6106a5565b6106a5818b610c67565b9250826106be5760008097509750505050505050610706565b846106d457828b97509750505050505050610706565b6106e8856106e28387610cc1565b90610d1a565b91505060006106fa858c85858a610d5c565b92975091955050505050505b965096945050505050565b600081156107215750600061091c565b60015460408051634a3f088d60e01b81526001600160a01b038981166004830152888116602483015287811660448301526000606483018190529251931692829182918591634a3f088d91608480830192610100929190829003018186803b15801561078c57600080fd5b505afa1580156107a0573d6000803e3d6000fd5b505050506040513d6101008110156107b757600080fd5b50805160408083015160e0909301518151635c07eaab60e01b81526001600160a01b038d811660048301526024820185905260448201869052600060648301819052608483018490528451959950959750919550849391891692635c07eaab9260a480840193829003018186803b15801561083157600080fd5b505afa158015610845573d6000803e3d6000fd5b505050506040513d604081101561085b57600080fd5b50805160209091015190925090506000610879866106e28c85610cc1565b90506001600160ff1b0381106040518060400160405280601781526020017653686f727473547261636b65723a206f766572666c6f7760481b815250906109015760405162461bcd60e51b8152602060048201818152835160248401528351909283926044909101919085019080838360008315610550578181015183820152602001610538565b50826109105780600003610912565b805b9750505050505050505b95945050505050565b6000546001600160a01b0316331461097c576040805162461bcd60e51b815260206004820152601560248201527423b7bb32b93730b136329d103337b93134b23232b760591b604482015290519081900360640190fd5b60045460408051808201909152601f81527f53686f727473547261636b65723a20616c7265616479206d696772617465640060208201529060ff1615610a035760405162461bcd60e51b8152602060048201818152835160248401528351909283926044909101919085019080838360008315610550578181015183820152602001610538565b5060005b83811015610a5d57828282818110610a1b57fe5b9050602002013560036000878785818110610a3257fe5b602090810292909201356001600160a01b031683525081019190915260400160002055600101610a07565b50506004805460ff19166001179055505050565b6000546001600160a01b03163314610ac8576040805162461bcd60e51b815260206004820152601560248201527423b7bb32b93730b136329d103337b93134b23232b760591b604482015290519081900360640190fd5b600080546001600160a01b0319166001600160a01b0392909216919091179055565b33600090815260026020908152604091829020548251808401909352601883527729b437b93a39aa3930b1b5b2b91d103337b93134b23232b760411b9183019190915260ff16610b7b5760405162461bcd60e51b8152602060048201818152835160248401528351909283926044909101919085019080838360008315610550578181015183820152602001610538565b508380610b86575082155b15610b9057610c04565b60045460ff16610b9f57610c04565b600080610bb08989898789886105b7565b91509150610bbe8782610dab565b604080518381526020810183905281516001600160a01b038a16927fd6137be44db128ffcf1ea1821dbe8f889f67f949be7656c2d8acba2a4a891a02928290030190a250505b50505050505050565b6001546001600160a01b031681565b6000610c5e83836040518060400160405280601e81526020017f536166654d6174683a207375627472616374696f6e206f766572666c6f770000815250610dc7565b90505b92915050565b600082820183811015610c5e576040805162461bcd60e51b815260206004820152601b60248201527f536166654d6174683a206164646974696f6e206f766572666c6f770000000000604482015290519081900360640190fd5b600082610cd057506000610c61565b82820282848281610cdd57fe5b0414610c5e5760405162461bcd60e51b8152600401808060200182810382526021815260200180610f446021913960400191505060405180910390fd5b6000610c5e83836040518060400160405280601a81526020017f536166654d6174683a206469766973696f6e206279207a65726f000000000000815250610e21565b6000806000610d6d85898987610e86565b915091506000610d9e83610d8a57610d858884610c67565b610d94565b610d948884610c1c565b6106e28a8a610cc1565b9998505050505050505050565b6001600160a01b03909116600090815260036020526040902055565b60008184841115610e195760405162461bcd60e51b8152602060048201818152835160248401528351909283926044909101919085019080838360008315610550578181015183820152602001610538565b505050900390565b60008183610e705760405162461bcd60e51b8152602060048201818152835160248401528351909283926044909101919085019080838360008315610550578181015183820152602001610538565b506000838581610e7c57fe5b0495945050505050565b6000808385118015610ee5576000841315610eca5786841115610eb857610ead8488610c1c565b965060009050610ec5565b610ec28785610c1c565b96505b610edb565b610ed8876000869003610c67565b96505b9150859050610f3a565b6000841315610eff57610ef88785610c67565b9650610f34565b86846000031115610f2357610f18600085900388610c1c565b965060019050610f34565b610f31876000869003610c1c565b96505b91508590505b9450949250505056fe536166654d6174683a206d756c7469706c69636174696f6e206f766572666c6f77a264697066735822122011522c1fb38f8dd92a1665c5acfdc6c56dc6e819fd8c6e570374ab96566d0a3564736f6c634300060c0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 3,
+        "contract": "contracts/core/ShortsTracker.sol:ShortsTracker",
+        "label": "gov",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 12456,
+        "contract": "contracts/core/ShortsTracker.sol:ShortsTracker",
+        "label": "vault",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_contract(IVault)7577"
+      },
+      {
+        "astId": 12460,
+        "contract": "contracts/core/ShortsTracker.sol:ShortsTracker",
+        "label": "isHandler",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_bool)"
+      },
+      {
+        "astId": 12465,
+        "contract": "contracts/core/ShortsTracker.sol:ShortsTracker",
+        "label": "globalShortAveragePrices",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 12468,
+        "contract": "contracts/core/ShortsTracker.sol:ShortsTracker",
+        "label": "isGlobalShortDataReady",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_bool"
+      },
+      {
+        "astId": 12472,
+        "contract": "contracts/core/ShortsTracker.sol:ShortsTracker",
+        "label": "data",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_mapping(t_bytes32,t_bytes32)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(IVault)7577": {
+        "encoding": "inplace",
+        "label": "contract IVault",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_mapping(t_bytes32,t_bytes32)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => bytes32)",
+        "numberOfBytes": "32",
+        "value": "t_bytes32"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
