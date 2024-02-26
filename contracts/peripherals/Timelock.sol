@@ -330,6 +330,10 @@ contract Timelock is TimelockStorage {
         IVault(_vault).setIsLeverageEnabled(_isLeverageEnabled);
     }
 
+    function setManager(address _vault, address _manager, bool _isManager) external onlyHandlerAndAbove {
+        IVault(_vault).setManager(_manager, _isManager);
+    }
+
     function setZusd(address _vault, address _zusd) external onlyHandlerAndAbove {
         IVault(_vault).setZusd(_zusd);
     }

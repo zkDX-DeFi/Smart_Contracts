@@ -145,12 +145,6 @@ abstract contract VaultInternal is VaultSettings {
         globalShortSizes[_token] = size.sub(_amount);
     }
 
-    function _validateManager() internal view {
-        if (inManagerMode) {
-            _validate(isManager[msg.sender], 54);
-        }
-    }
-
     function _validateGasPrice() internal view {
         if (maxGasPrice == 0) {return;}
         _validate(tx.gasprice <= maxGasPrice, 55);

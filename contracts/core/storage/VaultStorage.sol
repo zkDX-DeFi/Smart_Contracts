@@ -31,7 +31,6 @@ abstract contract VaultStorage is VaultAggregators {
     bool public override isSwapEnabled = true;
     bool public override isLeverageEnabled = true;
     bool public override hasDynamicFees = false;
-    bool public override inManagerMode = false;
     bool public override inPrivateLiquidationMode = true;
     IVaultUtils public vaultUtils;
     address public errorController;

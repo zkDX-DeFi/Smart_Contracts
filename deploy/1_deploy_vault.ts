@@ -8,6 +8,7 @@ import {
 import {errors} from "../helpers/errors";
 import {AddressZero, expandDecimals} from "../helpers/utils";
 import {CHAIN_ID_LOCAL, CHAIN_ID_ZKSYNC_TESTNET} from "../helpers/constants";
+import {validate} from "graphql/validation";
 
 const func: DeployFunction = async function ({deployments, getNamedAccounts, network, getChainId}) {
     const {deploy, execute} = deployments;
@@ -77,6 +78,8 @@ const func: DeployFunction = async function ({deployments, getNamedAccounts, net
     await execute("Vault", {from: owner}, "initialize", Router.address, ZKUSD.address, VaultPriceFeed.address, parseUnits("5", 30), 100, 100);
     await execute("Vault", {from: owner}, "setVaultUtils", VaultUtils.address);
     await execute("Vault", {from: owner}, "setErrorController", VaultErrorController.address);
+    await execute("Vault", {from: owner}, "setManager", Router.address, true);
+    await execute("Vault", {from: owner}, "setManager", owner, true);
     if (CHAIN_ID_ZKSYNC_TESTNET == chainId) {
         await execute("VaultErrorController", {from: owner, gasLimit: 250000000}, "setErrors", Vault.address, errors);
     } else {

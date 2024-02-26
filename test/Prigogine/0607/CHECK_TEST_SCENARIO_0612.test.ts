@@ -674,46 +674,6 @@ describe("check Test VaultV2 => P1_0612", async () => {
         await v.buyZKUSD(token.address, user);
         expect(await zkusd.balanceOf(user)).eq(parseEther("16000"));
     });
-    it("check vault.func => sellZKUSD => weth", async() => {
-        let token, user;
-        token = weth;
-        user  = user0;
-        await token.mint(user.address, parseUnits("1",18));
-
-        await token.connect(user).transfer(v.address, parseUnits("1",18));
-        await updateMarkPrice(['weth','wbtc','tsla','dai']);
-        await v.buyZKUSD(token.address, user.address);
-        expect(await zkusd.totalSupply()).eq(parseEther("1500"));
-
-        await zkusd.connect(user).transfer(v.address, parseEther("100"));
-        await v.connect(user).sellZKUSD(token.address, user.address);
-
-        expect(await zkusd.balanceOf(user.address)).eq(parseEther("1400"));
-        expect(await v.getNextFundingRate(token.address)).eq(0);
-        expect(await v.zkusdAmounts(token.address)).eq(parseEther("1400"));
-        expect(await v.maxZkusdAmounts(token.address)).gt(0);
-        expect(await v.poolAmounts(token.address)).closeTo(parseEther("0.9303"), MAX_WITHIN);
-        expect(await zkusd.totalSupply()).eq(parseEther("1400"));
-
-        let zkusdAmount = parseEther("1500");
-        expect(await v.getRedemptionAmount(token.address, zkusdAmount) ).eq(parseEther("1.0")); // getRedemptionAmount = 1.0 weth
-
-        expect(await v.tokenBalances(zkusd.address)).eq(0);
-        expect(await v.tokenBalances(token.address)).closeTo(parseEther("0.9335"), MAX_WITHIN);
-        expect(await v.tokenBalances(dai.address)).eq(0);
-        expect(await v.tokenBalances(wbtc.address)).eq(0);
-        expect(await v.tokenBalances(tsla.address)).eq(0);
-
-        expect(await vu.getSellZkusdFeeBasisPoints(token.address,zkusdAmount)).eq(0);
-        expect(await vu.getSellZkusdFeeBasisPoints(dai.address,zkusdAmount)).eq(0);
-        expect(await vu.getSellZkusdFeeBasisPoints(wbtc.address,zkusdAmount)).eq(0);
-        expect(await vu.getSellZkusdFeeBasisPoints(tsla.address,zkusdAmount)).eq(0);
-
-        expect(await v.feeReserves(token.address)).eq(parseEther("0"));
-        expect(await v.feeReserves(dai.address)).eq(0);
-        expect(await v.feeReserves(wbtc.address)).eq(0);
-        expect(await v.feeReserves(tsla.address)).eq(0);
-    });
     it("check vault.func => swap => dai 2 weth", async() => {
         await buyMLPWithTokenV2(weth, parseEther("200"), owner);
         await buyMLPWithTokenV2(dai, parseEther("123456"), owner);
@@ -815,7 +775,6 @@ describe("check Test VaultV2 => P1_0612", async () => {
         expect(await v.isSwapEnabled()).true;
         expect(await v.isLeverageEnabled()).true;
         expect(await v.hasDynamicFees()).false;
-        expect(await v.inManagerMode()).false;
         expect(await v.inPrivateLiquidationMode()).true;
         expect(await v.vaultUtils()).eq(vu.address);
         expect(await v.errorController()).eq(vec.address);

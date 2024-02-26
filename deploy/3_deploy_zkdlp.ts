@@ -42,6 +42,7 @@ const func: DeployFunction = async function ({deployments, getNamedAccounts, net
     await execute("ZkdlpManager", {from: owner}, "setHandler", RewardRouter.address, true);
     await execute("ZkdlpManager", {from: owner}, "setShortsTrackerAveragePriceWeight", 10000);
     await execute("ZKUSD", {from: owner}, "addVault", ZkdlpManager.address);
+    await execute("Vault", {from: owner}, "setManager", ZkdlpManager.address, true);
 };
 export default func;
 func.tags = ["zkdlp"];

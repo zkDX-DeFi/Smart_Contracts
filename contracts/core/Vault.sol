@@ -4,9 +4,16 @@ pragma solidity 0.6.12;
 import "./settings/VaultInternal.sol";
 
 contract Vault is VaultInternal {
+
+    modifier onlyManager() {
+        _validate(isManager[msg.sender], 54);
+        _;
+    }
+
     constructor() public {
         gov = msg.sender;
     }
+
     function initialize(address _router, address _zkusd, address _priceFeed, uint256 _liquidationFeeUsd, uint256 _fundingRateFactor, uint256 _stableFundingRateFactor) external {
         _onlyGov();
         _validate(!isInitialized, 1);
@@ -55,8 +62,7 @@ contract Vault is VaultInternal {
         * @param _receiver receiver of zkUSD
         * @return mintAmount amount of zkUSD minted
     */
-    function buyZKUSD(address _token, address _receiver) external override nonReentrant returns (uint256) {
-        _validateManager();
+    function buyZKUSD(address _token, address _receiver) external override nonReentrant onlyManager returns (uint256) { // only called by manager contracts
         _validate(whitelistedTokens[_token], 16);
         uint256 tokenAmount = _transferIn(_token);
         _validate(tokenAmount > 0, 17);
@@ -82,8 +88,7 @@ contract Vault is VaultInternal {
         * @return amountOut amount of token received
     */
 
-    function sellZKUSD(address _token, address _receiver) external override nonReentrant returns (uint256) {
-        _validateManager();
+    function sellZKUSD(address _token, address _receiver) external override nonReentrant onlyManager returns (uint256) {
         _validate(whitelistedTokens[_token], 19);
         uint256 zkusdAmount = _transferIn(zkusd);
         _validate(zkusdAmount > 0, 20);

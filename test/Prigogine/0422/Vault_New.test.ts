@@ -1,8 +1,9 @@
-import {forwardTime, setupFixture, toUsd} from "../../../helpers/utils";
-import {formatEther, formatUnits, parseEther, parseUnits} from "ethers/lib/utils";
+import {forwardTime, setupFixture} from "../../../helpers/utils";
+import {parseEther} from "ethers/lib/utils";
 import {expect} from "chai";
 import {constants} from "ethers";
-import {getUpdateData, updateMarkPrice} from "../../../helpers/utilsForTest";
+import {getUpdateData} from "../../../helpers/utilsForTest";
+
 describe("Vault Test", async () => {
     let vault: any,
         router: any,
@@ -82,14 +83,6 @@ describe("Vault Test", async () => {
         expect(await vault.stableTokens(zkusd.address)).to.eq(false);
         expect(await vault.stableTokens(zkdlp.address)).to.eq(false);
         expect(await weth.balanceOf(vault.address)).to.eq(parseEther("1"));
-    });
-    it("vault.func => setInManagerMode()", async () => {
-        expect(await vault.inManagerMode()).to.eq(false); // default
-        await vault.setInManagerMode(true);
-        expect(await vault.inManagerMode()).to.eq(true);
-        await vault.setInManagerMode(false);
-        expect(await vault.inManagerMode()).to.eq(false);
-        await expect(vault.connect(user0).setInManagerMode(true)).to.be.reverted;
     });
     it("vault.func => gov()", async () => {
         expect(await vault.gov()).to.eq(owner.address);

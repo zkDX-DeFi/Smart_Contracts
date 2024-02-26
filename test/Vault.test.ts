@@ -105,7 +105,6 @@ describe("Vault", async () => {
         await v.setVaultUtils(constants.AddressZero);
         await v.setErrorController(owner.address);
         await v.setError(0,"hello world");
-        await v.setInManagerMode(true);
         await v.setManager(constants.AddressZero,true);
         await v.setInPrivateLiquidationMode(true);
 
@@ -121,8 +120,6 @@ describe("Vault", async () => {
         await v.setMaxGlobalShortSize(dai.address,0);
         await v.setFundingRate(5000,0,0);
         await v.setZkusdAmount(dai.address,0);
-
-        expect(await v.inManagerMode()).to.be.true;
     });
 
     it("Vault.func => allWhitelistedTokensLength", async () => {

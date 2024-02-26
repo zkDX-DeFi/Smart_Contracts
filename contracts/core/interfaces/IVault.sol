@@ -78,7 +78,6 @@ interface IVault {
     function fundingInterval() external view returns (uint256);
     function totalTokenWeights() external view returns (uint256);
     function getTargetZkusdAmount(address _token) external view returns (uint256);
-    function inManagerMode() external view returns (bool);
     function inPrivateLiquidationMode() external view returns (bool);
     function maxGasPrice() external view returns (uint256);
     function approvedRouters(address _account, address _router) external view returns (bool);
@@ -89,7 +88,6 @@ interface IVault {
     function lastFundingTimes(address _token) external view returns (uint256);
 
     function setMaxLeverage(uint256 _maxLeverage) external;
-    function setInManagerMode(bool _inManagerMode) external;
     function setManager(address _manager, bool _isManager) external;
     function setIsSwapEnabled(bool _isSwapEnabled) external;
     function setIsLeverageEnabled(bool _isLeverageEnabled) external;

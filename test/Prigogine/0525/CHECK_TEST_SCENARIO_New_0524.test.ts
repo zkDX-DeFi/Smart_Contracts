@@ -617,7 +617,6 @@ describe("check PM TEST SCENARIO_0524", async () => {
         expect(await v.isSwapEnabled()).to.true;
         expect(await v.isLeverageEnabled()).to.true;
         expect(await v.hasDynamicFees()).to.false;
-        expect(await v.inManagerMode()).to.false;
         expect(await v.inPrivateLiquidationMode()).to.true;
         expect(await v.vaultUtils()).to.eq(vu.address);
         expect(await v.errorController()).to.eq(vec.address);
@@ -640,10 +639,6 @@ describe("check PM TEST SCENARIO_0524", async () => {
 
         expect(await v.errors(10)).to.eq("Vault: invalid _fundingInterval");
         await expect(v.setError(10,"hello error")).to.reverted;
-
-        expect(await v.inManagerMode()).to.false;
-        await v.setInManagerMode(true);
-        expect(await v.inManagerMode()).to.true;
 
         expect(await v.isManager(pm.address)).to.false;
         await v.setManager(pm.address, true);

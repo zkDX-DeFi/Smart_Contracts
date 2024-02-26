@@ -258,7 +258,6 @@ describe("Vault -> VaultStorage Test", async () => {
         expect(await v.isSwapEnabled()).to.be.true;
         expect(await v.isLeverageEnabled()).to.be.true;
         expect(await v.hasDynamicFees()).to.be.false;
-        expect(await v.inManagerMode()).to.be.false;
         expect(await v.inPrivateLiquidationMode()).to.be.true;
     });
     it("vs.parameters => vaultUtils + errorController", async () => {
@@ -551,11 +550,6 @@ describe("Vault -> VaultSettings Test", async () => {
 
         await expect(v.connect(user0).setError(55, "Vault: maxGasPrice exceeded")).to.be.reverted;//!gov
         await expect(v.connect(owner).setError(55, "Vault: maxGasPrice exceeded")).to.be.reverted;//!gov
-    });
-    it("v.func => setInManagerMode", async () => {
-        expect(await v.inManagerMode()).to.be.eq(false);
-        await expect(v.connect(user0).setInManagerMode(true)).to.be.reverted;//!gov
-        await expect(v.connect(owner).setInManagerMode(true)).to.be.reverted;//!gov
     });
     it("v.func => setManager", async () => {
         expect(await v.isManager(user0.address)).to.be.eq(false);

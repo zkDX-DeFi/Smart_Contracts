@@ -1306,9 +1306,6 @@ describe("BaseToken", async () => {
 
     it("check VaultSettings.sol => newDeployed", async() => {
         const v = await deployContract("Vault", []);
-        await expect(v.connect(user0).setInManagerMode(true)).to.be.reverted;
-        await v.setInManagerMode(true);
-
         await expect(v.connect(user0).setManager(user0.address, true)).to.be.reverted;
         await v.setManager(owner.address, true);
 

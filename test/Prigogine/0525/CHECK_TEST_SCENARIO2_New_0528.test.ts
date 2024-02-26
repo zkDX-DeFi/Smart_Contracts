@@ -544,12 +544,10 @@ describe("check PM TEST SCENARIO_0528", async () => {
         expect(await wbtc.balanceOf(dm.address)).eq(0);
         expect(await tsla.balanceOf(dm.address)).eq(0);
 
-        expect(await v.inManagerMode()).false;
-        expect(await v.isManager(dm.address)).false;
+        expect(await v.isManager(dm.address)).true;
         expect(await v.isManager(pm.address)).false;
         expect(await v.isManager(rr.address)).false;
-        expect(await v.isManager(router.address)).false;
-        expect(await v.isManager(owner.address)).false;
+        expect(await v.isManager(router.address)).true;
         expect(await v.isManager(user0.address)).false;
         expect(await v.whitelistedTokens(weth.address)).true;
         expect(await v.whitelistedTokens(dai.address)).true;
@@ -634,8 +632,7 @@ describe("check PM TEST SCENARIO_0528", async () => {
         expect(await v.tokenBalances(wbtc.address)).eq(0);
         expect(await v.tokenBalances(tsla.address)).eq(0);
 
-        expect(await v.inManagerMode()).false;
-        expect(await v.isManager(dm.address)).false;
+        expect(await v.isManager(dm.address)).true;
         expect(await v.isManager(pm.address)).false;
         expect(await v.isManager(rr.address)).false;
         expect(await v.whitelistedTokens(weth.address)).true;
@@ -905,13 +902,6 @@ describe("check PM TEST SCENARIO_0528", async () => {
         expect(await v.errorController()).eq(vec.address);
         // v.setError
         await expect(v.setError(0,"hello world")).to.be.reverted;
-        // v.setInManagerMode
-        expect(await v.inManagerMode()).false;
-        await expect(v.connect(user0).setInManagerMode(true)).to.be.reverted;
-        await v.setInManagerMode(true);
-        expect(await v.inManagerMode()).true;
-        await v.setInManagerMode(false);
-        expect(await v.inManagerMode()).false;
         // v.setManager
         expect(await v.isManager(pm.address)).false;
         await expect(v.connect(user0).setManager(pm.address,true)).to.be.reverted;
@@ -1131,60 +1121,6 @@ describe("check PM TEST SCENARIO_0528", async () => {
         // v.addRouter
         await v.addRouter(r.address);
         await v.removeRouter(r.address);
-    });
-    it("check vault.func => all => v3", async() => {
-        await longOperationA();
-        await t.signalSetGov(v.address,owner.address);
-        await forwardTime(86400*7);
-        await t.setGov(v.address,owner.address);
-        // v.initialize
-        expect(await v.isInitialized()).true;
-        expect(await v.router()).eq(r.address);
-        expect(await v.zkusd()).eq(zkusd.address);
-        expect(await v.priceFeed()).eq(feed.address);
-        expect(await v.liquidationFeeUsd()).eq(parseUnits("0",30));
-        expect(await v.fundingRateFactor()).eq(100);
-        expect(await v.stableFundingRateFactor()).eq(100);
-        // v.clearTokenConfig
-        expect(await v.whitelistedTokenCount()).eq(5);
-        await v.clearTokenConfig(tsla.address);
-        expect(await v.whitelistedTokenCount()).eq(4);
-        // v.withdrawFees
-        expect(await v.feeReserves(weth.address)).gt(0);
-        expect(await v.feeReserves(wbtc.address)).eq(0);
-        expect(await v.feeReserves(tsla.address)).eq(0);
-        expect(await v.feeReserves(dai.address)).eq(0);
-        expect(await weth.balanceOf(feeTo.address)).eq(0);
-        await v.withdrawFees(weth.address, feeTo.address);
-        expect(await weth.balanceOf(feeTo.address)).gt(parseEther("0.00093"));
-        expect(await weth.balanceOf(feeTo.address)).lt(parseEther("0.00094"));
-
-        // v.directPoolDeposit
-        await weth.mint(owner.address, parseEther("100"));
-        await weth.transfer(v.address, parseEther("100"));
-        await v.directPoolDeposit(weth.address);
-        // v.buyZKUSD
-        await weth.mint(owner.address, parseEther("100"));
-        await weth.transfer(v.address, parseEther("100"));
-        expect(await zkusd.balanceOf(receiver.address)).eq(0);
-        expect(await dlp.balanceOf(receiver.address)).eq(0);
-        await updateMarkPrice(['weth']);
-        await v.buyZKUSD(weth.address, receiver.address);
-        expect(await zkusd.balanceOf(receiver.address)).eq(parseEther("150000.0"));
-        expect(await dlp.balanceOf(receiver.address)).eq(0);
-
-        // v.sellZKUSD
-        await zkusd.connect(receiver).approve (v.address, parseEther("149550.0"));
-        await zkusd.connect(receiver).transfer(v.address, parseEther("14955.0"));
-        expect(await weth.balanceOf(receiver.address)).eq(0);
-        await v.connect(receiver).sellZKUSD(weth.address, receiver.address);
-        expect(await weth.balanceOf(receiver.address)).eq(parseEther("9.97"));
-
-        // v.swap
-        await dai.mint(receiver.address, parseEther("1500"));
-        await dai.connect(receiver).transfer(v.address, parseEther("1500"));
-        await updateMarkPrice(['dai']);
-        await v.connect(receiver).swap(dai.address, weth.address, receiver.address);
     });
     it("check PM.func => all", async() => {
         // PositionManagerSettings

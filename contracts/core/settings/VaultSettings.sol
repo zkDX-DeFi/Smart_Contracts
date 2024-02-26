@@ -24,11 +24,6 @@ abstract contract VaultSettings is VaultStorage {
         errors[_errorCode] = _error;
     }
 
-    function setInManagerMode(bool _inManagerMode) external override {
-        _onlyGov();
-        inManagerMode = _inManagerMode;
-    }
-
     function setManager(address _manager, bool _isManager) external override {
         _onlyGov();
         isManager[_manager] = _isManager;
