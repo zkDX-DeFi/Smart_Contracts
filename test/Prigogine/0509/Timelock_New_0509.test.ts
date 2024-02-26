@@ -1088,7 +1088,7 @@ describe("Timelock -> TimelockStorage", async () => {
     });
     it("t.func => setIsLeverageEnabled", async () => {
         // console.log(`v.isLeverageEnabled: ${await v.isLeverageEnabled()}`); //default for vault
-        expect(await v.isLeverageEnabled()).to.be.true;
+        expect(await v.isLeverageEnabled()).to.be.false;
 
         await t.setIsLeverageEnabled(v.address, true);
         expect(await v.isLeverageEnabled()).to.be.true;

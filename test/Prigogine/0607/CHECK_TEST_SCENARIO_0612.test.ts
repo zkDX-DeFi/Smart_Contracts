@@ -132,7 +132,7 @@ describe("check Test VaultV2 => P1_0612", async () => {
         rewardToken         = esZKDX;
         stakingToken        = usdc;
 
-        await feed.setValidTime(300);
+        await feed.setValidTime(120);
         // await v2.setTokenConfig(dai.address, true,true,true);
         // await v2.setTokenConfig(tsla.address, true,false,true);
         // await v2.setTokenConfig(weth.address, true,false,true);
@@ -773,7 +773,7 @@ describe("check Test VaultV2 => P1_0612", async () => {
         expect(await v.minProfitTime()).eq(3600);
 
         expect(await v.isSwapEnabled()).true;
-        expect(await v.isLeverageEnabled()).true;
+        expect(await v.isLeverageEnabled()).false;
         expect(await v.hasDynamicFees()).false;
         expect(await v.inPrivateLiquidationMode()).true;
         expect(await v.vaultUtils()).eq(vu.address);

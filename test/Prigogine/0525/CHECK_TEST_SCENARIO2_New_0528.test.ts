@@ -117,7 +117,7 @@ describe("check PM TEST SCENARIO_0528", async () => {
         rewardToken         = esZKDX;
         stakingToken        = usdc;
 
-        await feed.setValidTime(300);
+        await feed.setValidTime(120);
     });
     async function buyMLPWithTokenV2(token: any, amountIn: any, addressIn: any) {
         await token.mint(addressIn.address, amountIn);
@@ -774,7 +774,7 @@ describe("check PM TEST SCENARIO_0528", async () => {
     it("check vaultFeed.func  => ALL", async() => {
         await buyMLPWithTokenV2(weth, parseEther("200"), receiver);
         expect(await feed.pyth()).not.eq(constants.AddressZero);
-        expect(await feed.validTime()).eq(300);
+        expect(await feed.validTime()).eq(120);
         expect(await feed.feedIds(weth.address)).not.eq(constants.AddressZero);
         expect(await feed.feedIds(dai.address)).not.eq(constants.AddressZero);
         expect(await feed.feedIds(wbtc.address)).not.eq(constants.AddressZero);
@@ -817,13 +817,11 @@ describe("check PM TEST SCENARIO_0528", async () => {
         await expect(feed.connect(user0).setPyth(constants.AddressZero)).to.be.reverted;
         await feed.setPyth(constants.AddressZero);
         // feed.setValidTime()
-        expect(await feed.validTime()).eq(300);
+        expect(await feed.validTime()).eq(120);
         await expect(feed.connect(user0).setValidTime(0)).to.be.reverted;
         await feed.setValidTime(0);
         expect(await feed.validTime()).eq(0);
         // feed.setGov()
-
-
         expect(await feed.gov()).eq(owner.address);
         await expect(feed.connect(user0).setGov(user0.address)).to.be.reverted;
         await feed.setGov(user0.address);
@@ -1574,7 +1572,7 @@ describe("check PM TEST SCENARIO => P2", async () => {
         rewardToken         = esZKDX;
         stakingToken        = usdc;
 
-        await feed.setValidTime(300);
+        await feed.setValidTime(120);
     });
     async function buyMLPWithTokenV2(token: any, amountIn: any, addressIn: any) {
         await token.mint(addressIn.address, amountIn);

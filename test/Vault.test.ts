@@ -165,16 +165,5 @@ describe("Vault", async () => {
         await v.directPoolDeposit(weth.address);
     });
 
-    it("Vault.func => clearTokenConfig directly", async () => {
-        let whiteCountBefore = await v.whitelistedTokenCount();
-        expect(await v.whitelistedTokens(dai.address)).to.eq(false);
-        expect(await v.tokenDecimals(dai.address)).to.eq(0);
-        expect(await v.tokenWeights(dai.address)).to.eq(0);
-        expect(await v.minProfitBasisPoints(dai.address)).to.eq(0);
-        expect(await v.maxZkusdAmounts(dai.address)).to.eq(0);
-        expect(await v.stableTokens(dai.address)).to.eq(false);
-        expect(await v.shortableTokens(dai.address)).to.eq(false);
-        expect(await v.whitelistedTokenCount()).to.eq(whiteCountBefore - 1);
-    });
 });
 

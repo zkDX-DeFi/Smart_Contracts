@@ -11,6 +11,7 @@ contract VaultPriceFeed {
     mapping(address => bytes32) public feedIds;
     mapping(address => bool) public isStableToken;
     address public gov;
+    uint256 public constant MAX_VALID_TIME = 120;
 
     event SetValidTime(uint256 _validTime);
     event SetFeedIds(address[] _tokens, bytes32[] _feedIds);
@@ -64,6 +65,7 @@ contract VaultPriceFeed {
     }
 
     function setValidTime(uint256 _validTime) external onlyGov {
+        require(_validTime <= MAX_VALID_TIME, "VaultPriceFeed: invalid validTime");
         validTime = _validTime;
         emit SetValidTime(_validTime);
     }
@@ -76,6 +78,7 @@ contract VaultPriceFeed {
     }
 
     function setGov(address _gov) external onlyGov {
+        require(_gov != address(0), "VaultPriceFeed: invalid gov");
         gov = _gov;
         emit SetGov(_gov);
     }

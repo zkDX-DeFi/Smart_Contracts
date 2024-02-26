@@ -50,6 +50,7 @@ contract Vault is VaultInternal {
         * @return mintAmount amount of zkUSD minted
     */
     function buyZKUSD(address _token, address _receiver) external override nonReentrant onlyManager returns (uint256) { // only called by manager contracts
+        require(_receiver != address(0), "Vault: Receiver cannot be the zero address");
         _validate(whitelistedTokens[_token], 16);
         uint256 tokenAmount = _transferIn(_token);
         _validate(tokenAmount > 0, 17);
@@ -76,6 +77,7 @@ contract Vault is VaultInternal {
     */
 
     function sellZKUSD(address _token, address _receiver) external override nonReentrant onlyManager returns (uint256) {
+        require(_receiver != address(0), "Vault: Receiver cannot be the zero address");
         _validate(whitelistedTokens[_token], 19);
         uint256 zkusdAmount = _transferIn(zkusd);
         _validate(zkusdAmount > 0, 20);
@@ -102,6 +104,7 @@ contract Vault is VaultInternal {
         * @return amountOut amount of token received
     */
     function swap(address _tokenIn, address _tokenOut, address _receiver) external override nonReentrant returns (uint256) {
+        require(_receiver != address(0), "Vault: Receiver cannot be the zero address");
         _validate(isSwapEnabled, 23);
         _validate(whitelistedTokens[_tokenIn], 24);
         _validate(whitelistedTokens[_tokenOut], 25);
@@ -137,6 +140,7 @@ contract Vault is VaultInternal {
         * @param _isLong true if long, false if short
     */
     function increasePosition(address _account, address _collateralToken, address _indexToken, uint256 _sizeDelta, bool _isLong) external override nonReentrant {
+        require(_account != address(0), "Vault: Account cannot be the zero address");
         _validate(isLeverageEnabled, 28);
         _validateGasPrice();
         _validateRouter(_account);
@@ -200,6 +204,7 @@ contract Vault is VaultInternal {
         * @return amountOut amount of tokens received
     */
     function decreasePosition(address _account, address _collateralToken, address _indexToken, uint256 _collateralDelta, uint256 _sizeDelta, bool _isLong, address _receiver) external override nonReentrant returns (uint256) {
+        require(_account != address(0), "Vault: Account cannot be the zero address");
         _validateGasPrice();
         _validateRouter(_account);
         return _decreasePosition(_account, _collateralToken, _indexToken, _collateralDelta, _sizeDelta, _isLong, _receiver);

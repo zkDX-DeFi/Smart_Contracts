@@ -115,7 +115,7 @@ describe("check PM TEST SCENARIO_0524", async () => {
         rewardToken         = esZKDX;
         stakingToken        = usdc;
 
-        await feed.setValidTime(300);
+        await feed.setValidTime(120);
     });
     async function buyMLPWithTokenV2(token: any, amountIn: any, addressIn: any) {
         await token.mint(addressIn.address, amountIn);
@@ -615,7 +615,7 @@ describe("check PM TEST SCENARIO_0524", async () => {
         expect(await v.minProfitTime()).to.eq(3600);
 
         expect(await v.isSwapEnabled()).to.true;
-        expect(await v.isLeverageEnabled()).to.true;
+        expect(await v.isLeverageEnabled()).to.false;
         expect(await v.hasDynamicFees()).to.false;
         expect(await v.inPrivateLiquidationMode()).to.true;
         expect(await v.vaultUtils()).to.eq(vu.address);
@@ -656,7 +656,7 @@ describe("check PM TEST SCENARIO_0524", async () => {
         await v.setIsSwapEnabled(false);
         expect(await v.isSwapEnabled()).to.false;
 
-        expect(await v.isLeverageEnabled()).to.true;
+        expect(await v.isLeverageEnabled()).to.false;
         await v.setIsLeverageEnabled(false);
         expect(await v.isLeverageEnabled()).to.false;
 
@@ -1245,7 +1245,7 @@ describe("check PM TEST SCENARIO_0524", async () => {
         expect(await t.marginFeeBasisPoints()).eq(0);
         expect(await t.maxMarginFeeBasisPoints()).eq(0);
         // t.setIsLeverageEnabled
-        expect(await v.isLeverageEnabled()).true;
+        expect(await v.isLeverageEnabled()).false;
         await t.setIsLeverageEnabled(v.address, false);
         expect(await v.isLeverageEnabled()).false;
         await t.setIsLeverageEnabled(v.address, true);

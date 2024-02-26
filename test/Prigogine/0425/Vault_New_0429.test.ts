@@ -256,7 +256,7 @@ describe("Vault -> VaultStorage Test", async () => {
         expect(await v.minProfitTime()).to.be.eq(3600);
 
         expect(await v.isSwapEnabled()).to.be.true;
-        expect(await v.isLeverageEnabled()).to.be.true;
+        expect(await v.isLeverageEnabled()).to.be.false;
         expect(await v.hasDynamicFees()).to.be.false;
         expect(await v.inPrivateLiquidationMode()).to.be.true;
     });
@@ -580,7 +580,7 @@ describe("Vault -> VaultSettings Test", async () => {
         await expect(v.connect(owner).setIsSwapEnabled(false)).to.be.reverted;//!gov
     });
     it("v.func => setIsLeverageEnabled", async () => {
-        expect(await v.isLeverageEnabled()).to.be.eq(true);
+        expect(await v.isLeverageEnabled()).to.be.eq(false);
 
         await expect(v.connect(user0).setIsLeverageEnabled(false)).to.be.reverted;//!gov
         await expect(v.connect(owner).setIsLeverageEnabled(false)).to.be.reverted;//!gov

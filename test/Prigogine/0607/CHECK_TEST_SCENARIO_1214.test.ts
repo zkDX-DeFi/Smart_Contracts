@@ -123,7 +123,7 @@ describe("CHECK_TEST_SCENARIO_1214.test.ts", async () => {
         rewardToken         = esZKDX;
         stakingToken        = usdc;
 
-        await feed.setValidTime(300);
+        await feed.setValidTime(120);
         // await v2.setTokenConfig(dai.address, true,true,true);
         // await v2.setTokenConfig(tsla.address, true,false,true);
         // await v2.setTokenConfig(weth.address, true,false,true);
