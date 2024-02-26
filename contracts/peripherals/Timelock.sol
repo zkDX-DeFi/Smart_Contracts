@@ -258,10 +258,6 @@ contract Timelock is TimelockStorage {
         );
     }
 
-    function clearTokenConfig(address _vault, address _token) external {
-        IVault(_vault).clearTokenConfig(_token);
-    }
-
     function setAllowStableEquity(address _vault, bool _allowStaleEquityPrice) external onlyKeeperAndAbove {
         IVault(_vault).setAllowStableEquity(_allowStaleEquityPrice);
     }

@@ -5,7 +5,6 @@ library Events {
     event SetDepositFee(uint256 depositFee);
     event SetIncreasePositionBufferBps(uint256 increasePositionBufferBps);
     event SetAdmin(address admin);
-    event WithdrawFees(address token, address receiver, uint256 amount);
     event SetMaxGlobalSizes(address[] tokens, uint256[] longSizes, uint256[] shortSizes);
     /*Position Manager Events*/
     event SetOrderKeeper(address indexed account, bool isActive);
@@ -85,6 +84,7 @@ library Events {
     event DecreaseReservedAmount(address token, uint256 amount);
     event IncreaseGuaranteedUsd(address token, uint256 amount);
     event DecreaseGuaranteedUsd(address token, uint256 amount);
+    event WithdrawFees(address token, address receiver, uint256 amount);
     /* Timelock.sol events */
     event SignalPendingAction(bytes32 action);
     event SignalApprove(address token, address spender, uint256 amount, bytes32 action);

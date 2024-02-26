@@ -26,26 +26,13 @@ contract Vault is VaultInternal {
         stableFundingRateFactor = _stableFundingRateFactor;
     }
 
-    function clearTokenConfig(address _token) external override {
-        _onlyGov();
-        _validate(whitelistedTokens[_token], 13);
-        totalTokenWeights = totalTokenWeights.sub(tokenWeights[_token]);
-        delete whitelistedTokens[_token];
-        delete tokenDecimals[_token];
-        delete tokenWeights[_token];
-        delete minProfitBasisPoints[_token];
-        delete maxZkusdAmounts[_token];
-        delete stableTokens[_token];
-        delete shortableTokens[_token];
-        whitelistedTokenCount = whitelistedTokenCount.sub(1);
-    }
-
     function withdrawFees(address _token, address _receiver) external override returns (uint256) {
         _onlyGov();
         uint256 amount = feeReserves[_token];
         if (amount == 0) {return 0;}
         feeReserves[_token] = 0;
         _transferOut(_token, amount, _receiver);
+        emit Events.WithdrawFees(_token, _receiver, amount);
         return amount;
     }
 

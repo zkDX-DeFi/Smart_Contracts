@@ -12,6 +12,12 @@ contract VaultPriceFeed {
     mapping(address => bool) public isStableToken;
     address public gov;
 
+    event SetValidTime(uint256 _validTime);
+    event SetFeedIds(address[] _tokens, bytes32[] _feedIds);
+    event SetPyth(address _pyth);
+    event SetStableToken(address _token, bool _isStableToken);
+    event SetGov(address _gov);
+
     modifier onlyGov() {
         require(msg.sender == gov, "VaultPriceFeed: forbidden");
         _;
@@ -54,20 +60,24 @@ contract VaultPriceFeed {
 
     function setPyth(address _pyth) external onlyGov {
         pyth = IPyth(_pyth);
+        emit SetPyth(_pyth);
     }
 
     function setValidTime(uint256 _validTime) external onlyGov {
         validTime = _validTime;
+        emit SetValidTime(_validTime);
     }
 
     function setFeedIds(address[] calldata _tokens, bytes32[] calldata _feedIds) external onlyGov {
         require(_tokens.length == _feedIds.length, "VaultPriceFeed: invalid feedIds");
         for (uint256 i = 0; i < _tokens.length; i++)
             feedIds[_tokens[i]] = _feedIds[i];
+        emit SetFeedIds(_tokens, _feedIds);
     }
 
     function setGov(address _gov) external onlyGov {
         gov = _gov;
+        emit SetGov(_gov);
     }
 
     function abs(int256 n) internal pure returns (uint256) {
@@ -78,6 +88,7 @@ contract VaultPriceFeed {
 
     function setStableToken(address _token, bool _isStableToken) external onlyGov {
         isStableToken[_token] = _isStableToken;
+        emit SetStableToken(_token, _isStableToken);
     }
 
 }

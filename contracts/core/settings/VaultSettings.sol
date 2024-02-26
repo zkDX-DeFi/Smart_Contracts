@@ -129,6 +129,7 @@ abstract contract VaultSettings is VaultStorage {
         bool _isEquity
     ) external override {
         _onlyGov();
+        require(whitelistedTokenCount < MAX_WHITELISTED_TOKENS, "Vault: Max whitelisted tokens reached");
         if (!whitelistedTokens[_token]) {
             whitelistedTokenCount = whitelistedTokenCount.add(1);
             allWhitelistedTokens.push(_token);

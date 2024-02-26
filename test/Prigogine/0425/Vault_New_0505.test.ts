@@ -200,11 +200,6 @@ describe("Vault -> Vault Test", async () => {
         expect(await v.whitelistedTokens(zkdx.address)).to.be.false;
     });
 
-    it("v.func => clearTokenConfig()", async() => {
-        expect(await v.whitelistedTokenCount()).to.be.eq(5);
-        await expect(v.clearTokenConfig(weth.address)).to.be.reverted;
-    });
-
     it("v.func => withdrawFees()", async() => {
         await OP_BASE_MLP();
         console.log(`weth balance: ${formatEther(await v.feeReserves(weth.address))}`);

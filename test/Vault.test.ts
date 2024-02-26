@@ -156,7 +156,6 @@ describe("Vault", async () => {
         await timelock.signalSetGov(v.address, owner.address);
         await forwardTime(500000);
         await timelock.setGov(v.address,owner.address);
-        await v.clearTokenConfig(dai.address);
         await v.withdrawFees(dai.address, user2.address);
         await v.addRouter(user2.address);
         await v.removeRouter(user2.address);
@@ -168,7 +167,6 @@ describe("Vault", async () => {
 
     it("Vault.func => clearTokenConfig directly", async () => {
         let whiteCountBefore = await v.whitelistedTokenCount();
-        await timelock.clearTokenConfig(v.address, dai.address);
         expect(await v.whitelistedTokens(dai.address)).to.eq(false);
         expect(await v.tokenDecimals(dai.address)).to.eq(0);
         expect(await v.tokenWeights(dai.address)).to.eq(0);

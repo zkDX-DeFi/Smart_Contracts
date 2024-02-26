@@ -111,7 +111,6 @@ interface IVault {
         uint256 _redemptionBps, uint256 _minProfitBps,
         uint256 _maxZkusdAmount, bool _isStable,
         bool _isShortable, bool _isEquity) external;
-    function clearTokenConfig(address _token) external;
     function setMinProfitTime(uint256 _minProfitTime) external;
     function setPriceFeed(address _priceFeed) external;
     function setVaultUtils(IVaultUtils _vaultUtils) external;

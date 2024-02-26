@@ -29,7 +29,7 @@ abstract contract VaultStorage is VaultAggregators {
     uint256 public override maxGasPrice;
     uint256 public override minProfitTime;
     bool public override isSwapEnabled = true;
-    bool public override isLeverageEnabled = true;
+    bool public override isLeverageEnabled = false;
     bool public override hasDynamicFees = false;
     bool public override inPrivateLiquidationMode = true;
     IVaultUtils public vaultUtils;
@@ -66,4 +66,6 @@ abstract contract VaultStorage is VaultAggregators {
     /* misc */
     using SafeMath for uint256;
     using SafeERC20 for IERC20;
+
+    uint256 public constant MAX_WHITELISTED_TOKENS = 100;
 }
