@@ -300,18 +300,6 @@ contract Timelock is TimelockStorage {
         }
     }
 
-//    function batchSetBonusRewards(address _vester, address[] memory _accounts, uint256[] memory _amounts) external onlyKeeperAndAbove {
-//        require(_accounts.length == _amounts.length, Errors.TIMELOCK_INVALID_LENGTHS);
-//        if (!IHandlerTarget(_vester).isHandler(address(this))) {
-//            IHandlerTarget(_vester).setHandler(address(this), true);
-//        }
-//        for (uint256 i = 0; i < _accounts.length; i++) {
-//            address account = _accounts[i];
-//            uint256 amount = _amounts[i];
-//            IVester(_vester).setBonusRewards(account, amount);
-//        }
-//    }
-
     /* onlyHandlerAndAbove */
     function setShouldToggleIsLeverageEnabled(bool _shouldToggleIsLeverageEnabled) external onlyHandlerAndAbove {
         shouldToggleIsLeverageEnabled = _shouldToggleIsLeverageEnabled;

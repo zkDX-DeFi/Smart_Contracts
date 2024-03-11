@@ -17,6 +17,8 @@ contract Vault is VaultInternal {
     function initialize(address _router, address _zkusd, address _priceFeed, uint256 _liquidationFeeUsd, uint256 _fundingRateFactor, uint256 _stableFundingRateFactor) external {
         _onlyGov();
         _validate(!isInitialized, 1);
+        _validate(_liquidationFeeUsd <= Constants.MAX_LIQUIDATION_FEE_USD, 9);
+        _validate(_fundingRateFactor <= Constants.MAX_FUNDING_RATE_FACTOR, 11);
         isInitialized = true;
         router = _router;
         zkusd = _zkusd;

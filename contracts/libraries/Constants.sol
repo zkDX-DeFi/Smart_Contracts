@@ -27,6 +27,7 @@ library Constants {
     uint256 public constant ZKUSD_DECIMALS = 18;
     uint256 public constant MAX_FEE_BASIS_POINTS = 500; // 5%
     uint256 public constant MAX_LIQUIDATION_FEE_USD = 100 * PRICE_PRECISION; // 100 USD
+    uint256 public constant MAX_FUNDING_RATE_FACTOR = 10000; // 1%
 
     /* OrderBook.sol */
     uint256 public constant ZKUSD_PRECISION = 1e18;
