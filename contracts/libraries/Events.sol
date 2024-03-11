@@ -75,7 +75,6 @@ library Events {
     event UpdatePnl(bytes32 key, bool hasProfit, uint256 delta);
     event CollectSwapFees(address token, uint256 feeUsd, uint256 feeTokens);
     event CollectMarginFees(address token, uint256 feeUsd, uint256 feeTokens);
-    event DirectPoolDeposit(address token, uint256 amount);
     event IncreasePoolAmount(address token, uint256 amount);
     event DecreasePoolAmount(address token, uint256 amount);
     event IncreaseZkusdAmount(address token, uint256 amount);

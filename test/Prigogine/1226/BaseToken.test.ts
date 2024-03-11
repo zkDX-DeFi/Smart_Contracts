@@ -1119,46 +1119,6 @@ describe("BaseToken", async () => {
         await expect(pm.connect(user0).setZusd(zusd.address)).to.be.reverted;
     });
 
-    it("check RouterSettings.sol", async() => {
-        async function directDoolDeposit(_token: any = weth, _amountIn: any = parseEther("100"), _user: any = owner) {
-            await _token.mint(_user.address, _amountIn);
-            await _token.connect(_user).approve(router.address, _amountIn);
-            await router.connect(_user).directPoolDeposit(_token.address, _amountIn);
-        }
-
-        await expect(router.connect(user0).setGov(owner.address)).to.be.reverted;
-        await router.setGov(owner.address);
-
-        await directDoolDeposit(dai , parseEther("100000"));
-
-        let _user = user0;
-        let _amountIn = parseEther("1");
-        let {updateData, fee} = await getUpdateData(['weth', 'dai']);
-
-        await router.connect(_user).swapETHToTokens([weth.address, dai.address], 0, _user.address,
-            updateData, {value: _amountIn.add(fee)});
-
-        let {updateData: data2, fee: fee2} = await getUpdateData(['weth', 'dai']);
-        await expect(router.connect(_user).swapETHToTokens([dai.address, weth.address], 0, _user.address,
-            data2, {value: _amountIn.add(fee2)})).to.be.reverted;
-
-        _amountIn = parseEther("1000"); //1000 dai
-        await dai.connect(_user).approve(router.address, _amountIn);
-
-        let {updateData: data3, fee: fee3} = await getUpdateData(['weth', 'dai']);
-        await router.connect(_user).swapTokensToETH([dai.address, weth.address], _amountIn, 0, _user.address,
-            data3, {value: fee3});
-
-        await expect(router.connect(_user).swapTokensToETH([weth.address, dai.address], _amountIn, 0, _user.address,
-            data3, {value: fee3})).to.be.reverted;
-
-        await expect(router.connect(user0).removePlugin(pm.address)).to.be.reverted;
-        await router.removePlugin(pm.address);
-
-        await expect(router.connect(user0).addPlugin(pm.address)).to.be.reverted;
-        await router.addPlugin(pm.address)
-    });
-
     it("check Router.sol => swap function", async() => {
         await weth.mint(vault.address, parseEther("1.1"));
         await updateMarkPrice(['weth']);

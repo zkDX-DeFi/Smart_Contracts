@@ -6,7 +6,7 @@ import "./settings/RouterSettings.sol";
 import "./BasePriceConsumer.sol";
 
 contract Router is RouterSettings, BasePriceConsumer {
-    
+
     constructor(address _vault, address _zkusd, address _weth) BasePriceConsumer(_vault) public {
         vault = _vault;
         zkusd = _zkusd;
@@ -43,7 +43,7 @@ contract Router is RouterSettings, BasePriceConsumer {
     }
 
     function pluginDecreasePosition(
-        address _account, 
+        address _account,
         address _collateralToken,
         address _indexToken,
         uint256 _collateralDelta,
@@ -55,14 +55,9 @@ contract Router is RouterSettings, BasePriceConsumer {
         return IVault(vault).decreasePosition(_account, _collateralToken, _indexToken, _collateralDelta, _sizeDelta, _isLong, _receiver);
     }
 
-    function directPoolDeposit(address _token, uint256 _amount) external {
-        IERC20(_token).safeTransferFrom(_sender(), vault, _amount);
-        IVault(vault).directPoolDeposit(_token);
-    }
-
     function swap(
-        address[] memory _path, 
-        uint256 _amountIn, 
+        address[] memory _path,
+        uint256 _amountIn,
         uint256 _minOut,
         address _receiver,
         bytes[] calldata _updateData
@@ -74,14 +69,14 @@ contract Router is RouterSettings, BasePriceConsumer {
     }
 
     function swapETHToTokens(
-        address[] memory _path, 
+        address[] memory _path,
         uint256 _minOut,
         address _receiver,
         bytes[] calldata _updateData
     ) external payable {
         uint256 _fee = _update(_updateData);
         require(_path[0] == weth, Errors.ROUTER_INVALID_PATH);
-        
+
         uint256 _amountIn = msg.value.sub(_fee);
         _transferETHToVault(_amountIn);
         uint256 amountOut = _swap(_path, _minOut, _receiver);

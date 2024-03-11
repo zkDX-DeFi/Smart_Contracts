@@ -49,11 +49,6 @@ abstract contract VaultSettings is VaultStorage {
         isLeverageEnabled = _isLeverageEnabled;
     }
 
-    function setMaxGasPrice(uint256 _maxGasPrice) external override {
-        _onlyGov();
-        maxGasPrice = _maxGasPrice;
-    }
-
     function setGov(address _gov) external {
         _onlyGov();
         gov = _gov;

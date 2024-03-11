@@ -256,11 +256,6 @@ describe("check PM TEST SCENARIO_0528", async () => {
             0, // minOut
             _receiver.address, updateData, {value: fee});
     }
-    async function directDoolDeposit(_token: any = weth, _amountIn: any = parseEther("100"), _user: any = receiver) {
-        await _token.mint(_user.address, _amountIn);
-        await _token.connect(_user).approve(router.address, _amountIn);
-        await router.connect(_user).directPoolDeposit(_token.address, _amountIn);
-    }
 
     async function OP_BASE_MLP() {
         await buyMLPWithTokenV2(weth, parseEther("200"), owner);
@@ -692,47 +687,6 @@ describe("check PM TEST SCENARIO_0528", async () => {
         expect(await v.bufferAmounts(dai.address)).eq(0);
         expect(await v.bufferAmounts(wbtc.address)).eq(0);
         expect(await v.bufferAmounts(tsla.address)).eq(0);
-    });
-    it("check router => vault.func => directPoolDeposit", async() => {
-        await directDoolDeposit();
-
-        expect(await v.poolAmounts(weth.address)).eq(parseEther("100.0"));
-        expect(await v.poolAmounts(dai.address)).eq(0);
-        await swapToken();
-        expect(await v.poolAmounts(weth.address)).eq(parseEther("99.0"));
-        expect(await v.poolAmounts(dai.address)).eq(parseEther("1500.0"));
-    });
-    it("check router => vault.func => directPoolDeposit v2", async() => {
-        await directDoolDeposit();
-        expect(await v.poolAmounts(weth.address)).eq(parseEther("100.0"));
-        expect(await v.poolAmounts(dai .address)).eq(0);
-        expect(await v.poolAmounts(wbtc.address)).eq(0);
-        expect(await v.poolAmounts(tsla.address)).eq(0);
-
-        await directDoolDeposit(wbtc, parseUnits("1",8));
-        await directDoolDeposit(tsla, parseEther("100"));
-        await directDoolDeposit(dai , parseEther("1000"));
-
-        expect(await v.poolAmounts(weth.address)).eq(parseEther("100.0"));
-        expect(await v.poolAmounts(dai.address)).eq(parseEther("1000"));
-        expect(await v.poolAmounts(wbtc.address)).eq(parseUnits("1",8));
-        expect(await v.poolAmounts(tsla.address)).eq(parseEther("100"));
-    });
-    it("check router.func => swapETHToTokens + swapTokensToETH", async() => {
-        await directDoolDeposit(dai , parseEther("100000"));
-
-        let _user = user0;
-        let _amountIn = parseEther("1");
-        let {updateData, fee} = await getUpdateData(['weth', 'dai']);
-
-        await router.connect(_user).swapETHToTokens([weth.address, dai.address], 0, _user.address,
-            updateData, {value: _amountIn.add(fee)});
-        expect(await dai.balanceOf(_user.address) ).eq(parseEther("1500"));
-
-        _amountIn = parseEther("1000"); //1000 dai
-        await dai.connect(_user).approve(router.address, _amountIn);
-        await router.connect(_user).swapTokensToETH([dai.address, weth.address], _amountIn, 0, _user.address,
-            updateData, {value: fee});
     });
     it("check router => ", async() => {
         expect(await r.plugins(pm.address)).true;
@@ -1711,11 +1665,6 @@ describe("check PM TEST SCENARIO => P2", async () => {
             _amountIn, // inAmount
             0, // minOut
             _receiver.address, updateData, {value: fee});
-    }
-    async function directDoolDeposit(_token: any = weth, _amountIn: any = parseEther("100"), _user: any = receiver) {
-        await _token.mint(_user.address, _amountIn);
-        await _token.connect(_user).approve(router.address, _amountIn);
-        await router.connect(_user).directPoolDeposit(_token.address, _amountIn);
     }
 
     async function OP_BASE_MLP() {

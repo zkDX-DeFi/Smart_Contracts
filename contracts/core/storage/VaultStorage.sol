@@ -26,7 +26,6 @@ abstract contract VaultStorage is VaultAggregators {
     uint256 public override marginFeeBasisPoints = 10; // 0.1%
     uint256 public override fundingInterval = 1 hours;
     uint256 public override whitelistedTokenCount;
-    uint256 public override maxGasPrice;
     uint256 public override minProfitTime;
     bool public override isSwapEnabled = true;
     bool public override isLeverageEnabled = false;

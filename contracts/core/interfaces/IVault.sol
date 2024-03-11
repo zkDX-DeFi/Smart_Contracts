@@ -3,7 +3,6 @@ pragma solidity ^0.6.0;
 import "./IVaultUtils.sol";
 interface IVault {
     function withdrawFees(address _token, address _receiver) external returns (uint256);
-    function directPoolDeposit(address _token) external;
     function buyZKUSD(address _token, address _receiver) external returns (uint256);
     function sellZKUSD(address _token, address _receiver) external returns (uint256);
     function swap(address _tokenIn, address _tokenOut, address _receiver) external returns (uint256);
@@ -79,7 +78,6 @@ interface IVault {
     function totalTokenWeights() external view returns (uint256);
     function getTargetZkusdAmount(address _token) external view returns (uint256);
     function inPrivateLiquidationMode() external view returns (bool);
-    function maxGasPrice() external view returns (uint256);
     function approvedRouters(address _account, address _router) external view returns (bool);
     function isLiquidator(address _account) external view returns (bool);
     function isManager(address _account) external view returns (bool);
@@ -91,7 +89,6 @@ interface IVault {
     function setManager(address _manager, bool _isManager) external;
     function setIsSwapEnabled(bool _isSwapEnabled) external;
     function setIsLeverageEnabled(bool _isLeverageEnabled) external;
-    function setMaxGasPrice(uint256 _maxGasPrice) external;
     function setZkusdAmount(address _token, uint256 _amount) external;
     function setBufferAmount(address _token, uint256 _amount) external;
     function setMaxGlobalShortSize(address _token, uint256 _amount) external;
@@ -111,6 +108,7 @@ interface IVault {
         uint256 _redemptionBps, uint256 _minProfitBps,
         uint256 _maxZkusdAmount, bool _isStable,
         bool _isShortable, bool _isEquity) external;
+    function clearTokenConfig(address _token) external;
     function setMinProfitTime(uint256 _minProfitTime) external;
     function setPriceFeed(address _priceFeed) external;
     function setVaultUtils(IVaultUtils _vaultUtils) external;

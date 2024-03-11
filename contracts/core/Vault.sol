@@ -28,6 +28,27 @@ contract Vault is VaultInternal {
         stableFundingRateFactor = _stableFundingRateFactor;
     }
 
+    function clearTokenConfig(address _token) external override {
+        _onlyGov();
+        _validate(whitelistedTokens[_token], 13);
+        totalTokenWeights = totalTokenWeights.sub(tokenWeights[_token]);
+        for (uint i = 0; i < allWhitelistedTokens.length; i++) {
+            if (allWhitelistedTokens[i] == _token) {
+                allWhitelistedTokens[i] = allWhitelistedTokens[allWhitelistedTokens.length - 1];
+                allWhitelistedTokens.pop();
+                break;
+            }
+        }
+        delete whitelistedTokens[_token];
+        delete tokenDecimals[_token];
+        delete tokenWeights[_token];
+        delete minProfitBasisPoints[_token];
+        delete maxZkusdAmounts[_token];
+        delete stableTokens[_token];
+        delete shortableTokens[_token];
+        whitelistedTokenCount = whitelistedTokenCount.sub(1);
+    }
+
     function withdrawFees(address _token, address _receiver) external override returns (uint256) {
         _onlyGov();
         uint256 amount = feeReserves[_token];
@@ -36,14 +57,6 @@ contract Vault is VaultInternal {
         _transferOut(_token, amount, _receiver);
         emit Events.WithdrawFees(_token, _receiver, amount);
         return amount;
-    }
-
-    function directPoolDeposit(address _token) external override nonReentrant {
-        _validate(whitelistedTokens[_token], 14);
-        uint256 tokenAmount = _transferIn(_token);
-        _validate(tokenAmount > 0, 15);
-        _increasePoolAmount(_token, tokenAmount);
-        emit Events.DirectPoolDeposit(_token, tokenAmount);
     }
 
     /**
@@ -144,7 +157,6 @@ contract Vault is VaultInternal {
     function increasePosition(address _account, address _collateralToken, address _indexToken, uint256 _sizeDelta, bool _isLong) external override nonReentrant {
         require(_account != address(0), "Vault: Account cannot be the zero address");
         _validate(isLeverageEnabled, 28);
-        _validateGasPrice();
         _validateRouter(_account);
         _validateTokens(_collateralToken, _indexToken, _isLong);
         vaultUtils.validateIncreasePosition(_account, _collateralToken, _indexToken, _sizeDelta, _isLong);
@@ -207,7 +219,6 @@ contract Vault is VaultInternal {
     */
     function decreasePosition(address _account, address _collateralToken, address _indexToken, uint256 _collateralDelta, uint256 _sizeDelta, bool _isLong, address _receiver) external override nonReentrant returns (uint256) {
         require(_account != address(0), "Vault: Account cannot be the zero address");
-        _validateGasPrice();
         _validateRouter(_account);
         return _decreasePosition(_account, _collateralToken, _indexToken, _collateralDelta, _sizeDelta, _isLong, _receiver);
     }

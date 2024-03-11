@@ -359,13 +359,4 @@ describe("Router->Router Test", async () => {
        expect(await v.whitelistedTokens(zkdx.address)).to.be.false;
     });
 
-    it("router.func => directPoolDeposit()", async () => {
-        await dai.mint(owner.address, parseEther("10000"));
-        await dai.approve(router.address, ApproveAmount);
-        await router.directPoolDeposit(dai.address, parseEther("10000"));
-
-        expect(await v.poolAmounts(dai.address)).to.be.eq(parseEther("10000"));
-        expect(await v.poolAmounts(weth.address)).to.be.eq(parseEther("0"));
-        expect(await v.poolAmounts(wbtc.address)).to.be.eq(parseEther("0"));
-    });
 });

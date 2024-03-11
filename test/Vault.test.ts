@@ -162,7 +162,6 @@ describe("Vault", async () => {
         await weth.mint(v.address, parseEther("10000"));
         await weth.approve(v.address, parseEther("100000"));
         await v.upgradeVault(user2.address, dai.address, 0);
-        await v.directPoolDeposit(weth.address);
     });
 
 });

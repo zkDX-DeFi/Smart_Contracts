@@ -278,11 +278,6 @@ describe("check Test VaultV2 => P1_0612", async () => {
             0, // minOut
             _receiver.address, updateData, {value: fee});
     }
-    async function directDoolDeposit(_token: any = weth, _amountIn: any = parseEther("100"), _user: any = receiver) {
-        await _token.mint(_user.address, _amountIn);
-        await _token.connect(_user).approve(router.address, _amountIn);
-        await router.connect(_user).directPoolDeposit(_token.address, _amountIn);
-    }
 
     async function OP_BASE_MLP() {
         await buyMLPWithTokenV2(weth, parseEther("200"), owner);
@@ -617,31 +612,6 @@ describe("check Test VaultV2 => P1_0612", async () => {
         expect(await v.feeReserves(weth.address)).eq(0);
         expect(await v.feeReserves(wbtc.address)).eq(0);
         expect(await v.feeReserves(dai.address)).eq(0);
-    });
-    it("check vault.func", async() => {
-        await weth.mint(v.address, parseEther("1.2345"));
-        await v.directPoolDeposit(weth.address);
-
-        expect(await v.feeReserves(tsla.address)).eq(0);
-        expect(await v.feeReserves(weth.address)).eq(0);
-        expect(await v.feeReserves(wbtc.address)).eq(0);
-        expect(await v.feeReserves(dai.address)) .eq(0);
-        expect(await weth.balanceOf(v.address)).gt(0);
-        expect(await wbtc.balanceOf(v.address)).eq(0);
-        expect(await tsla.balanceOf(v.address)).eq(0);
-        expect(await dai .balanceOf(v.address)).eq(0);
-
-
-        let token = weth;
-        expect(await zkusd.balanceOf(receiver.address)).eq(0);
-
-        await token.mint(v.address, parseEther("1.2345"));
-        await updateMarkPrice(['weth','wbtc','tsla','dai']);
-        await v.buyZKUSD(token.address, receiver.address);
-
-        expect(await zkusd.balanceOf(receiver.address)).gt(parseEther("1846"));
-        expect(await zkusd.balanceOf(receiver.address)).eq(parseEther("1851.75"));
-        expect(await dlp.balanceOf(receiver.address)).eq(0);
     });
 
     it("check vault.func => buyZKUSD => wbtc + dai + tsla", async() => {

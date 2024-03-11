@@ -145,11 +145,6 @@ abstract contract VaultInternal is VaultSettings {
         globalShortSizes[_token] = size.sub(_amount);
     }
 
-    function _validateGasPrice() internal view {
-        if (maxGasPrice == 0) {return;}
-        _validate(tx.gasprice <= maxGasPrice, 55);
-    }
-
     function _validatePosition(uint256 _size, uint256 _collateral) internal view {
         if (_size == 0) {
             _validate(_collateral == 0, 39);
@@ -245,12 +240,6 @@ abstract contract VaultInternal is VaultSettings {
         DataTypes.Position memory position = positions[key];
         uint256 realisedPnl = position.realisedPnl > 0 ? uint256(position.realisedPnl) : uint256(- position.realisedPnl);
         return (position.size, position.collateral, position.averagePrice, position.entryFundingRate, position.reserveAmount, realisedPnl, position.realisedPnl >= 0, position.lastIncreasedTime);
-    }
-
-    function getPositionDelta(address _account, address _collateralToken, address _indexToken, bool _isLong) public view returns (bool, uint256) {
-        bytes32 key = getPositionKey(_account, _collateralToken, _indexToken, _isLong);
-        DataTypes.Position memory position = positions[key];
-        return getDelta(_indexToken, position.size, position.averagePrice, _isLong, position.lastIncreasedTime);
     }
 
     function isPositionExist(address _account, address _collateralToken, address _indexToken, bool _isLong) public override view returns (bool exist, bytes32 key) {

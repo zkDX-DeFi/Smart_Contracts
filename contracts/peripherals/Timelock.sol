@@ -58,11 +58,6 @@ contract Timelock is TimelockStorage {
         IVault(_vault).setVaultUtils(_vaultUtils);
     }
 
-    function setMaxGasPrice(address _vault, uint256 _maxGasPrice) external onlyAdmin {
-        require(_maxGasPrice > 5000000000, Errors.TIMELOCK_INVALID_MAXGASPRICE);
-        IVault(_vault).setMaxGasPrice(_maxGasPrice);
-    }
-
     function setInPrivateLiquidationMode(address _vault, bool _inPrivateLiquidationMode) external onlyAdmin {
         IVault(_vault).setInPrivateLiquidationMode(_inPrivateLiquidationMode);
     }
@@ -256,6 +251,10 @@ contract Timelock is TimelockStorage {
             _isShortable,
             _isEquity
         );
+    }
+
+    function clearTokenConfig(address _vault, address _token) external {
+        IVault(_vault).clearTokenConfig(_token);
     }
 
     function setAllowStableEquity(address _vault, bool _allowStaleEquityPrice) external onlyKeeperAndAbove {
