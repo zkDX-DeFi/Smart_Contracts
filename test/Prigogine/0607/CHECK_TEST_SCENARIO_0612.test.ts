@@ -739,7 +739,6 @@ describe("check Test VaultV2 => P1_0612", async () => {
         expect(await v.marginFeeBasisPoints()).eq(500);
         expect(await v.fundingInterval()).eq(3600);
         expect(await v.whitelistedTokenCount()).eq(5);
-        expect(await v.maxGasPrice()).eq(0);
         expect(await v.minProfitTime()).eq(3600);
 
         expect(await v.isSwapEnabled()).true;

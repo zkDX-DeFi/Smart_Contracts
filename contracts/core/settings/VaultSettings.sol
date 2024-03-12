@@ -51,7 +51,13 @@ abstract contract VaultSettings is VaultStorage {
 
     function setGov(address _gov) external {
         _onlyGov();
-        gov = _gov;
+        pendingGov = _gov;
+    }
+
+    function acceptGov() external {
+        require(msg.sender == pendingGov, "Vault: pendingGov");
+        gov = pendingGov;
+        delete pendingGov;
     }
 
     function setPriceFeed(address _priceFeed) external override {
@@ -161,11 +167,6 @@ abstract contract VaultSettings is VaultStorage {
     function setAllowStableEquity(bool _allowStaleEquityPrice) external override {
         _onlyGov();
         allowStaleEquityPrice = _allowStaleEquityPrice;
-    }
-
-    function setZusd(address _zusd) external override {
-        _onlyGov();
-        zusd = _zusd;
     }
 
     function _validate(bool _condition, uint256 _errorCode) internal view {

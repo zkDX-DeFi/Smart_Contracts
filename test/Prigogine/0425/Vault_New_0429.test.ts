@@ -252,7 +252,6 @@ describe("Vault -> VaultStorage Test", async () => {
         expect(await v.whitelistedTokens(zkdlp.address)).to.be.false;
     });
     it("vs.parameters => maxGasPrice", async () => {
-        expect(await v.maxGasPrice()).to.be.eq(0);
         expect(await v.minProfitTime()).to.be.eq(3600);
 
         expect(await v.isSwapEnabled()).to.be.true;
@@ -584,12 +583,6 @@ describe("Vault -> VaultSettings Test", async () => {
 
         await expect(v.connect(user0).setIsLeverageEnabled(false)).to.be.reverted;//!gov
         await expect(v.connect(owner).setIsLeverageEnabled(false)).to.be.reverted;//!gov
-    });
-    it("v.func => setMaxGasPrice", async () => {
-        expect(await v.maxGasPrice()).to.be.eq(0);
-
-        await expect(v.connect(user0).setMaxGasPrice(100)).to.be.reverted;//!gov
-        await expect(v.connect(owner).setMaxGasPrice(100)).to.be.reverted;//!gov
     });
     it("v.func => setGov", async () => {
         expect(await v.gov()).to.be.eq(timelock.address);
@@ -1155,17 +1148,6 @@ describe("Vault -> VaultInternal Test", async () => {
 
         position = await v.getPosition(owner.address, dai.address, weth.address, false);
         expect(position[0]).to.be.eq(parseUnits("1400",30));
-    });
-    it("v.func => getPositionDelta()", async() => {
-        await OP_BASE_MLP();
-        await OP_BASE_LONG_SHORT();
-        let positionDelta = await v.getPositionDelta(owner.address, weth.address, weth.address, true);
-        expect(positionDelta[0]).to.be.false;
-        expect(positionDelta[1]).to.be.eq(0);
-
-        positionDelta = await v.getPositionDelta(owner.address, dai.address, weth.address, false);
-        expect(positionDelta[0]).to.be.false;
-        expect(positionDelta[1]).to.be.eq(0);
     });
     it("v.func => getTargetZkusdAmount()", async() => {
         await OP_BASE_MLP();

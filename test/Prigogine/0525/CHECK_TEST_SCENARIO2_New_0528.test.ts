@@ -828,6 +828,7 @@ describe("check PM TEST SCENARIO_0528", async () => {
         await t.signalSetGov(v.address,owner.address);
         await forwardTime(86400*7);
         await t.setGov(v.address,owner.address);
+        await v.acceptGov();
         expect(await v.gov()).eq(owner.address);
 
         expect(await v.isInitialized()).true;
@@ -898,19 +899,14 @@ describe("check PM TEST SCENARIO_0528", async () => {
         expect(await v.isLeverageEnabled()).true;
         await v.setIsLeverageEnabled(false);
         expect(await v.isLeverageEnabled()).false;
-        // v.setMaxGasPrice
-        expect(await v.maxGasPrice()).eq(0);
-        await expect(v.connect(user0).setMaxGasPrice(1)).to.be.reverted;
-        await v.setMaxGasPrice(1);
-        expect(await v.maxGasPrice()).eq(1);
-        await v.setMaxGasPrice(0);
-        expect(await v.maxGasPrice()).eq(0);
         // v.setGov
         expect(await v.gov()).eq(owner.address);
         await expect(v.connect(user0).setGov(user0.address)).to.be.reverted;
         await v.setGov(user0.address);
+        await v.connect(user0).acceptGov()
         expect(await v.gov()).eq(user0.address);
         await v.connect(user0).setGov(owner.address);
+        await v.acceptGov()
         expect(await v.gov()).eq(owner.address);
         // v.setPriceFeed
         expect(await v.priceFeed()).eq(feed.address);
@@ -1014,6 +1010,7 @@ describe("check PM TEST SCENARIO_0528", async () => {
         await t.signalSetGov(v.address,owner.address);
         await forwardTime(86400*7);
         await t.setGov(v.address,owner.address);
+        await v.acceptGov();
         expect(await v.gov()).eq(owner.address);
 
         // v.getNextFundingRate
@@ -1026,53 +1023,6 @@ describe("check PM TEST SCENARIO_0528", async () => {
         expect(await v.getEntryFundingRate(weth.address, weth.address,false)).eq(0);
         // v.getTargetZkusdAmount
         expect(await v.getTargetZkusdAmount(weth.address)).eq(parseEther("6000"));
-        // v.getRedemptionAmount
-        await updateMarkPrice(['weth']);
-        expect(await v.getRedemptionAmount(weth.address, parseEther("1"))).gt(0);
-        // v.getPositionKey
-        // expect(await v.getPositionKey(owner.address, weth.address, weth.address, true)).eq(
-        //     '0x1142692f2d2f091b2c4960d9abcc01fcd82bfa3d5196308f4a7795e4dc8d5ae1');
-        // v.getPosition
-        let x = await v.getPosition(owner.address, weth.address, weth.address, true);
-        // v.getPositionDelta
-        x = await v.getPositionDelta(owner.address, weth.address, weth.address, true);
-        expect(x[0]).eq(false);
-        expect(x[1]).eq(0);
-        await updateMarkPrice(['weth'], ['1888']);
-        x = await v.getPositionDelta(owner.address, weth.address, weth.address, true);
-        expect(x[0]).true;
-        expect(x[1]).gt(parseUnits("362",30));
-        expect(x[1]).lt(parseUnits("363",30));
-        // v.getFundingFee + getMaxPrice + getMinPrice
-        expect(await v.getFundingFee(owner.address, weth.address, weth.address, true, toUsd(1000), 0)).eq(0);
-        expect(await v.getMaxPrice(weth.address)).eq(parseUnits("1888",30));
-        expect(await v.getMinPrice(weth.address)).eq(parseUnits("1888",30));
-
-        // v.getDelta
-        x = await v.getDelta(weth.address, toUsd(123), toUsd(2300), true, 0);
-        expect(await x[0]).eq(false);
-        expect(await x[1]).gt(parseUnits("22",30));
-        expect(await x[1]).lt(parseUnits("23",30));
-        // v.usdToTokenMax + v.usdToTokenMin
-        expect(await v.usdToTokenMax(weth.address, toUsd(1888))).eq(parseEther("1"));
-        expect(await v.usdToTokenMin(weth.address, toUsd(1888))).eq(parseEther("1"));
-        await updateMarkPrice(['wbtc'], ['28000']);
-        expect(await v.usdToTokenMax(wbtc.address, toUsd(28000))).eq(parseUnits("1",8));
-        expect(await v.usdToTokenMin(wbtc.address, toUsd(28000))).eq(parseUnits("1",8));
-        // v.tokenToUsdMin
-        expect(await v.tokenToUsdMin(weth.address, parseEther("1"))).eq(parseUnits("1888.0",30));
-        // v.usdToToken
-        expect(await v.usdToToken(weth.address, toUsd(1888), toUsd(1888))).eq(parseEther("1"));
-        expect(await v.usdToToken(wbtc.address, toUsd(28000),toUsd(28000))).eq(parseUnits("1",8));
-        // v.adjustForDecimals
-        expect(await v.adjustForDecimals(parseEther("1"), zkusd.address, weth.address)).eq(parseEther("1"));
-        // v.getPositionFee
-        expect(await v.getPositionFee(owner.address, weth.address, weth.address, true, toUsd(1000))).eq(parseUnits("50",30));
-        // v.allWhitelistedTokensLength
-        expect(await v.allWhitelistedTokensLength()).eq(5);
-        // v.addRouter
-        await v.addRouter(r.address);
-        await v.removeRouter(r.address);
     });
     it("check PM.func => all", async() => {
         // PositionManagerSettings

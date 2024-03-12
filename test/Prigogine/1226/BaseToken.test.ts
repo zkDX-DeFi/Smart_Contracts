@@ -1255,13 +1255,6 @@ describe("BaseToken", async () => {
         console.log(`${await v.getMaxPrice(dai.address)}`);
 
         await feed.setValidTime(30);
-        let {updateData, fee} = await getUpdateData(['weth', 'dai']);
-        console.log(`${await v.getPositionDelta(
-            owner.address,
-            dai.address,
-            weth.address,
-            false
-        )}`);
     });
 
     it("check VaultSettings.sol => newDeployed", async() => {
@@ -1274,9 +1267,6 @@ describe("BaseToken", async () => {
 
         await expect(v.connect(user0).setIsSwapEnabled(true)).to.be.reverted;
         await v.setIsSwapEnabled(true);
-
-        await expect(v.connect(user0).setMaxGasPrice(0)).to.be.reverted;
-        await v.setMaxGasPrice(0);
 
         await expect(v.connect(user0).setPriceFeed(feed.address)).to.be.reverted;
         await v.setPriceFeed(feed.address);
@@ -1303,8 +1293,6 @@ describe("BaseToken", async () => {
         await v.setZkusdAmount(weth.address, parseEther("999"));
         await v.setZkusdAmount(weth.address, parseEther("3000"));
 
-        await expect(v.connect(user0).setZusd(zusd.address)).to.be.reverted;
-        await v.setZusd(zusd.address);
     });
 
     it("check PM.sol", async() => {

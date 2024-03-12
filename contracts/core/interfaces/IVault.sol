@@ -70,6 +70,7 @@ interface IVault {
     function router() external view returns (address);
     function zkusd() external view returns (address);
     function gov() external view returns (address);
+    function pendingGov() external view returns (address);
     function whitelistedTokenCount() external view returns (uint256);
     function maxLeverage() external view returns (uint256);
     function minProfitTime() external view returns (uint256);
@@ -114,5 +115,4 @@ interface IVault {
     function setVaultUtils(IVaultUtils _vaultUtils) external;
     function setError(uint256 _errorCode, string calldata _error) external;
     function setAllowStableEquity(bool _allowStaleEquityPrice) external;
-    function setZusd(address _zusd) external;
 }

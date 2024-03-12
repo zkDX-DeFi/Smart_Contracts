@@ -32,10 +32,11 @@ const func: DeployFunction = async function ({deployments, getNamedAccounts, net
 
     // set gov
     const Timelock = await get("Timelock");
+    const Vault = await get("Vault");
     await execute("Vault", {from: owner}, "setGov", Timelock.address);
+    await execute("Timelock", {from: owner}, "acceptGov", Vault.address);
 
     // set liquidator
-    const Vault = await get("Vault");
     const PositionManager = await get("PositionManager");
     await execute("Timelock", {from: owner}, "setLiquidator", Vault.address, PositionManager.address, true);
     await execute("Timelock", {from: owner}, "setAllowStableEquity", Vault.address, true);

@@ -611,7 +611,6 @@ describe("check PM TEST SCENARIO_0524", async () => {
         expect(await v.fundingInterval()).to.eq(3600);
 
         expect(await v.whitelistedTokenCount()).to.eq(5);
-        expect(await v.maxGasPrice()).to.eq(0);
         expect(await v.minProfitTime()).to.eq(3600);
 
         expect(await v.isSwapEnabled()).to.true;
@@ -626,6 +625,7 @@ describe("check PM TEST SCENARIO_0524", async () => {
         await forwardTime(86400 * 7);
         expect(await v.gov()).to.eq(t.address);
         await t.setGov(v.address, owner.address);
+        await v.acceptGov();
         expect(await v.gov()).to.eq(owner.address);
 
 
@@ -660,14 +660,12 @@ describe("check PM TEST SCENARIO_0524", async () => {
         await v.setIsLeverageEnabled(false);
         expect(await v.isLeverageEnabled()).to.false;
 
-        expect(await v.maxGasPrice()).to.eq(0);
-        await v.setMaxGasPrice(100);
-        expect(await v.maxGasPrice()).to.eq(100);
-
         expect(await v.gov()).to.eq(owner.address);
         await v.setGov(user0.address);
+        await v.connect(user0).acceptGov();
         expect(await v.gov()).to.eq(user0.address);
         await v.connect(user0).setGov(owner.address);
+        await v.acceptGov();
         expect(await v.gov()).to.eq(owner.address);
 
         expect(await v.priceFeed()).to.eq(feed.address);
@@ -933,9 +931,6 @@ describe("check PM TEST SCENARIO_0524", async () => {
         await t.setVaultUtils(v.address, vu.address);
         expect(await v.vaultUtils()).eq(vu.address);
 
-        expect(await v.maxGasPrice()).eq(0);
-        await t.setMaxGasPrice(v.address, parseEther("100"));
-        expect(await v.maxGasPrice()).eq(parseEther("100"));
         // t.setInPrivateLiquidationMode
         expect(await v.inPrivateLiquidationMode()).true;
         await t.setInPrivateLiquidationMode(v.address, false);

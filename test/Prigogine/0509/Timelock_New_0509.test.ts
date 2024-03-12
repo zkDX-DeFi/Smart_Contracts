@@ -259,14 +259,6 @@ describe("Timelock -> Timelock Test => PART I", async () => {
         await t.setVaultUtils(v.address, constants.AddressZero);
         expect(await v.vaultUtils()).to.be.eq(constants.AddressZero);
     });
-    it("t.func => setMaxGasPrice", async() => {
-        expect(await v.maxGasPrice()).to.be.eq(0);
-        await expect(t.connect(user0).setMaxGasPrice(v.address, 100)).to.be.revertedWith(ErrorsV2.TIMELOCK_FORBIDDEN);
-        await expect(t.setMaxGasPrice(v.address, 100)).to.be.reverted;
-
-        await t.setMaxGasPrice(v.address, 6000000000);
-        expect(await v.maxGasPrice()).to.be.eq(6000000000);
-    });
     it("t.func => setInPrivateLiquidationMode", async() => {
         expect(await v.inPrivateLiquidationMode()).to.be.true;
         await expect(t.connect(user0).setInPrivateLiquidationMode(v.address, true)).to.be.revertedWith(ErrorsV2.TIMELOCK_FORBIDDEN);

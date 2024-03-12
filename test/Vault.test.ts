@@ -73,8 +73,6 @@ describe("Vault", async () => {
     });
 
     it("Vault.func => setMaxLeverage", async () => {
-        await timelock.setMaxGasPrice(v.address,50000000000);
-
         await timelock.setInPrivateLiquidationMode(v.address,true);
 
         await timelock.setLiquidator(v.address, user2.address, true);
@@ -101,6 +99,7 @@ describe("Vault", async () => {
         await timelock.signalSetGov(v.address, owner.address);
         await forwardTime(500000);
         await timelock.setGov(v.address,owner.address);
+        await v.acceptGov();
 
         await v.setVaultUtils(constants.AddressZero);
         await v.setErrorController(owner.address);
@@ -111,7 +110,6 @@ describe("Vault", async () => {
         await v.setLiquidator(constants.AddressZero,true);
         await v.setIsSwapEnabled(true);
         await v.setIsLeverageEnabled(true);
-        await v.setMaxGasPrice(0);
         await v.setGov(owner.address);
         await v.setPriceFeed(constants.AddressZero);
 
@@ -156,6 +154,7 @@ describe("Vault", async () => {
         await timelock.signalSetGov(v.address, owner.address);
         await forwardTime(500000);
         await timelock.setGov(v.address,owner.address);
+        await v.acceptGov();
         await v.withdrawFees(dai.address, user2.address);
         await v.addRouter(user2.address);
         await v.removeRouter(user2.address);

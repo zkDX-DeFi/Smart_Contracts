@@ -6,6 +6,7 @@ import "./VaultAggregators.sol";
 abstract contract VaultStorage is VaultAggregators {
     /* constructor */
     address public override gov;
+    address public override pendingGov;
     bool public override isInitialized;
     address public override router;
     address public override zkusd;
@@ -60,7 +61,6 @@ abstract contract VaultStorage is VaultAggregators {
     mapping(address => uint256) public override zkusdAmounts;
     mapping(address => uint256) public override maxZkusdAmounts;
     bool public allowStaleEquityPrice;
-    address public zusd;
     mapping(address => int256) public tokenPnl;
     /* misc */
     using SafeMath for uint256;

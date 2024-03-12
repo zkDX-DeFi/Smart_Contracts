@@ -65,6 +65,7 @@ describe("VaultUtils Test", async () => {
             await timelock.signalSetGov(target.address, user.address);
             await forwardTime(86400 * 10); // after buff
             await timelock.setGov(target.address, user.address);
+            await v.connect(user).acceptGov();
             expect(await target.gov()).to.be.eq(user.address);
         }
         async function buyMLPWithETH() {

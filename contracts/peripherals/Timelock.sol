@@ -70,6 +70,10 @@ contract Timelock is TimelockStorage {
         IBaseToken(_token).setInPrivateTransferMode(_inPrivateTransferMode);
     }
 
+    function acceptGov(address _vault) external onlyAdmin {
+        ITimelockTarget(_vault).acceptGov();
+    }
+
     function setGov(address _target, address _gov) external onlyAdmin {
         bytes32 action = keccak256(abi.encodePacked("setGov", _target, _gov));
         _validateAction(action);
@@ -315,10 +319,6 @@ contract Timelock is TimelockStorage {
 
     function setManager(address _vault, address _manager, bool _isManager) external onlyHandlerAndAbove {
         IVault(_vault).setManager(_manager, _isManager);
-    }
-
-    function setZusd(address _vault, address _zusd) external onlyHandlerAndAbove {
-        IVault(_vault).setZusd(_zusd);
     }
 
     function enableLeverage(address _vault) external override onlyHandlerAndAbove {
