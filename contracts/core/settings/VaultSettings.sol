@@ -55,7 +55,7 @@ abstract contract VaultSettings is VaultStorage {
     }
 
     function acceptGov() external {
-        require(msg.sender == pendingGov, "Vault: pendingGov");
+        require(msg.sender == pendingGov, "Vault: not pendingGov");
         gov = pendingGov;
         delete pendingGov;
     }

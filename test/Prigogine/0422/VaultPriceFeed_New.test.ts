@@ -168,6 +168,7 @@ describe("VaultPriceFeed Test", async () => {
         expect(await feed.gov()).to.eq(owner.address);
         await expect(feed.connect(user0).setGov(user0.address)).to.be.reverted;
         await feed.setGov(user0.address);
+        await feed.connect(user0).acceptGov()
         expect(await feed.gov()).to.eq(user0.address);
     });
 });

@@ -11,6 +11,7 @@ contract VaultPriceFeed {
     mapping(address => bytes32) public feedIds;
     mapping(address => bool) public isStableToken;
     address public gov;
+    address public pendingGov;
     uint256 public constant MAX_VALID_TIME = 120;
 
     event SetValidTime(uint256 _validTime);
@@ -18,6 +19,7 @@ contract VaultPriceFeed {
     event SetPyth(address _pyth);
     event SetStableToken(address _token, bool _isStableToken);
     event SetGov(address _gov);
+    event AcceptGov(address _gov);
 
     modifier onlyGov() {
         require(msg.sender == gov, "VaultPriceFeed: forbidden");
@@ -79,8 +81,15 @@ contract VaultPriceFeed {
 
     function setGov(address _gov) external onlyGov {
         require(_gov != address(0), "VaultPriceFeed: invalid gov");
-        gov = _gov;
+        pendingGov = _gov;
         emit SetGov(_gov);
+    }
+
+    function acceptGov() external {
+        require(msg.sender == pendingGov, "VaultPriceFeed: not pendingGov");
+        gov = pendingGov;
+        delete pendingGov;
+        emit AcceptGov(gov);
     }
 
     function abs(int256 n) internal pure returns (uint256) {
