@@ -162,7 +162,7 @@ describe("VaultPriceFeed Test", async () => {
         await rewardRouter.mintAndStakeZkdlpETH(parseEther("1000"), parseEther("1000"), updateData, {value: parseEther("1")});
 
         expect(await feed.getUpdateFee(updateData)).to.be.eq(fee);
-        expect(fee).to.be.eq(3);
+        expect(fee).to.be.eq(5);
     });
     it(`feed.func => setGov()`, async () => {
         expect(await feed.gov()).to.eq(owner.address);

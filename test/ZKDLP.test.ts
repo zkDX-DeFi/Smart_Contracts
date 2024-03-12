@@ -256,7 +256,6 @@ describe("ZKDLP", async () => {
 
     it("ZkdlpManager.func => removeLiquidity(dai) 2", async () => {
         // console.log(`mm.getAums: ${await mm.getAums()}`);
-
         await updateMarkPrice(['weth', 'dai', 'wbtc']);
         console.log(`mm.getAumInZkusd: ${await mm.getAumInZkusd(true)}`);
         console.log(`mm.getAumInZkusd: ${await mm.getAumInZkusd(false)}`);

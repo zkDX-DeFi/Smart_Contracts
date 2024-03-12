@@ -765,7 +765,7 @@ describe("check PM TEST SCENARIO_0528", async () => {
 
         let {updateData, fee} = await getUpdateData(['weth', 'dai']);
         expect(await feed.getUpdateFee(updateData)).eq(fee);
-        expect(await feed.getUpdateFee(updateData)).eq(2);
+        expect(await feed.getUpdateFee(updateData)).eq(4);
         // feed.setPyth()
         expect(await feed.pyth()).not.eq(constants.AddressZero);
         await expect(feed.connect(user0).setPyth(constants.AddressZero)).to.be.reverted;

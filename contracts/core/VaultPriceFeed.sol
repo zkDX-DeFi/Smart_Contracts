@@ -35,7 +35,7 @@ contract VaultPriceFeed {
     function getPrice(address _token, bool _includeConf, bool _maximise, bool _fresh) external view returns (uint256) {
         if (isStableToken[_token])
             return 1e30;
-        PythStructs.Price memory _feed = pyth.getPriceUnsafe(feedIds[_token]);
+        PythStructs.Price memory _feed = pyth.getPriceNoOlderThan(feedIds[_token], MAX_VALID_TIME);
         require(_feed.price > 0, "VaultPriceFeed: price not available");
         if (_fresh && block.timestamp > _feed.publishTime)
             require(block.timestamp - _feed.publishTime <= validTime, "VaultPriceFeed: price too old");
@@ -49,7 +49,7 @@ contract VaultPriceFeed {
     }
 
     function latestTime(address _token) external view returns (uint256 _diff) {
-        PythStructs.Price memory _feed = pyth.getPriceUnsafe(feedIds[_token]);
+        PythStructs.Price memory _feed = pyth.getPriceNoOlderThan(feedIds[_token], MAX_VALID_TIME);
         _diff = block.timestamp - _feed.publishTime;
     }
 

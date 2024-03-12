@@ -23,7 +23,9 @@ export function getNetworkCurrentTimestamp() {
         return block.timestamp;
     });
 }
+
 export async function getUpdateData(tokens: string[], prices?: string[], confidences?: string[]) {
+    tokens.push("usdc", "tsla");
     let pythContract = await ethers.getContract<PythContract>("PythContract");
     let updateData = [];
     let publishTime = await getNetworkCurrentTimestamp();
@@ -93,6 +95,7 @@ export async function getUpdateData(tokens: string[], prices?: string[], confide
     let fee = await pythContract.getUpdateFee(updateData);
     return {updateData, fee};
 }
+
 export async function updateMarkPrice(tokens: string[], prices?: string[], confidences?: string[]) {
     let vaultPriceFeed = await ethers.getContract<VaultPriceFeed>("VaultPriceFeed");
     let {updateData, fee} = await getUpdateData(tokens, prices, confidences);
@@ -106,11 +109,13 @@ export function getPositionFee(size: BigNumber) {
     const afterFeeUsd = size.mul(BASIS_POINTS_DIVISOR - MARGIN_FEE_BASIS_POINTS).div(BASIS_POINTS_DIVISOR);
     return size.sub(afterFeeUsd);
 }
+
 export function getFundingFee(size: BigNumber, entryFundingRate: BigNumber, cumulativeFundingRate: BigNumber) {
     if (!entryFundingRate || !cumulativeFundingRate)
         return bigNumberify(0);
     return size.mul(cumulativeFundingRate.sub(entryFundingRate)).div(FUNDING_RATE_PRECISION);
 }
+
 export async function getLiqPriceForPosition(account: string, collateralToken: string, indexToken: string, isLong: boolean) {
     let vault = await ethers.getContract<Vault>("Vault");
     let key = await vault.getPositionKey(account, collateralToken, indexToken, isLong);
@@ -118,6 +123,7 @@ export async function getLiqPriceForPosition(account: string, collateralToken: s
     let cumulativeFundingRate = await vault.cumulativeFundingRates(collateralToken);
     return getLiqPrice(position, cumulativeFundingRate, true);
 }
+
 export function getLiqPrice(position: any, cumulativeFundingRate: BigNumber, isLong: boolean) {
     let positionFee = getPositionFee(position.size);
     let fundingFee = getFundingFee(position.size, position.entryFundingRate, cumulativeFundingRate);
@@ -135,6 +141,7 @@ export function getLiqPrice(position: any, cumulativeFundingRate: BigNumber, isL
         return liqPriceForFees.gt(liqPriceForMaxLeverage) ? liqPriceForFees : liqPriceForMaxLeverage;
     return liqPriceForFees.lt(liqPriceForMaxLeverage) ? liqPriceForFees : liqPriceForMaxLeverage;
 }
+
 export function getLiqPriceFromSize(liqAmount: BigNumber, size: BigNumber, collateral: BigNumber, averagePrice: BigNumber, isLong: boolean) {
     if (!size || size.eq(0)) {
         return;
@@ -146,12 +153,13 @@ export function getLiqPriceFromSize(liqAmount: BigNumber, size: BigNumber, colla
     return isLong ? averagePrice.sub(priceDelta) : averagePrice.add(priceDelta);
 }
 
-export async function global_buyMLPWithETH(etherValue: any, addressIn: any, feed:any, rewardRouter: any) {
+export async function global_buyMLPWithETH(etherValue: any, addressIn: any, feed: any, rewardRouter: any) {
     await feed.setValidTime(30);
     let {updateData, fee} = await getUpdateData(['weth', 'dai', 'wbtc']);
     await rewardRouter.connect(addressIn).mintAndStakeZkdlpETH(0, 0, updateData, {value: etherValue.add(fee)});
 };
-export async function global_longWETH_DAIAmountIn(user: any, _DAIAmountIn: any, _sizeDelta: any, dai:any, weth: any, router:any, pm: any) {
+
+export async function global_longWETH_DAIAmountIn(user: any, _DAIAmountIn: any, _sizeDelta: any, dai: any, weth: any, router: any, pm: any) {
     let {updateData, fee} = await getUpdateData(['weth', 'dai', 'wbtc']);
     let params = [
         [dai.address, weth.address], // _path

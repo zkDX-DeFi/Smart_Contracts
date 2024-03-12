@@ -3,54 +3,38 @@ import {
     bigNumberify,
     expandDecimals,
     forwardTime,
-    getBlockTime, getGasFee,
+    getBlockTime,
+    getGasFee,
     mineBlocks,
-    newWallet, reportGasUsed,
-    setupFixture, toChainlinkPrice,
+    newWallet,
+    reportGasUsed,
+    setupFixture,
+    toChainlinkPrice,
     toUsd
 } from "../../../helpers/utils";
-import {formatEther, formatUnits, parseEther, parseUnits} from "ethers/lib/utils";
+import {formatEther, parseEther, parseUnits} from "ethers/lib/utils";
 import {expect} from "chai";
+import {DEFAULT_WITHIN, MAX_WITHIN} from "../../../helpers/constants";
 import {
-    DEFAULT_WITHIN,
-    FEED_ID_ETH_MAIN,
-    FEED_ID_ETH_TEST,
-    LIQUIDATION_FEE,
-    MAX_WITHIN
-} from "../../../helpers/constants";
-import {
-    getDaiConfig, getEquityConfig, getTokenConfig, getUsdcConfig,
+    getDaiConfig,
+    getEquityConfig,
+    getTokenConfig,
+    getUsdcConfig,
     getWbtcConfig,
     getWethConfig,
-    getWmaticConfig,
-    getWNativeConfigByChainId
+    getWmaticConfig
 } from "../../../helpers/params";
-import {
-    CHAIN_ID_LOCAL,
-    CHAIN_ID_MUMBAI,
-    CHAIN_ID_ZKSYNC_MAINNET,
-    CHAIN_ID_ZKSYNC_TESTNET
-} from "../../../helpers/chains";
 import {constants} from "ethers";
-import {ethers, network} from "hardhat";
+import {ethers} from "hardhat";
 import {
     getEthNumber,
     OP_CHAINID,
-    OP_GET_UPDATEData,
-    OP_TOKEN_INTERVAL,
     printVault_Pool_Reserved,
     sleep,
     splitter,
     splitterTitle
 } from "../../../helpers/utils2";
-import {
-    getFundingFee,
-    getLiqPrice, getLiqPriceForPosition,
-    getLiqPriceFromSize,
-    getNetworkCurrentTimestamp, getPositionFee,
-    getUpdateData,
-    updateMarkPrice
-} from "../../../helpers/utilsForTest";
+import {getNetworkCurrentTimestamp, getUpdateData, updateMarkPrice} from "../../../helpers/utilsForTest";
 
 describe("check helpers scripts => ", async () => {
     let
@@ -485,7 +469,7 @@ describe("check helpers scripts => ", async () => {
     it("check helpers/utils.ts => getNetworkCurrentTimestamp()", async() => {
         expect(await getNetworkCurrentTimestamp()).to.be.gt(0);
         let {updateData, fee} = await getUpdateData(['weth', 'dai', 'wbtc']);
-        expect(fee).to.be.eq(3);
+        expect(fee).to.be.eq(5);
         await updateMarkPrice(['weth', 'wbtc', 'dai']);
 
         expect(getEthNumber(parseEther("1.2345"))).to.be.eq(1);
